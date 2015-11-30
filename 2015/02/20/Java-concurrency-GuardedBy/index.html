@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Java concurrency : @GuardedBy | Happy Birthday to Dolly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
+    <meta name="description" content="When reading DownloadService class in Android Open Source Project, I noticed a use of @GuardedBy annotation, which is kind of like synchronized keyword in Java but with alternative locks. We may use t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java concurrency : @GuardedBy">
+<meta property="og:url" content="http://xiangyuzheng.github.io/2015/02/20/Java-concurrency-GuardedBy/index.html">
+<meta property="og:site_name" content="Happy Birthday to Dolly">
+<meta property="og:description" content="When reading DownloadService class in Android Open Source Project, I noticed a use of @GuardedBy annotation, which is kind of like synchronized keyword in Java but with alternative locks. We may use t">
+<meta property="og:updated_time" content="2015-02-23T00:26:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java concurrency : @GuardedBy">
+<meta name="twitter:description" content="When reading DownloadService class in Android Open Source Project, I noticed a use of @GuardedBy annotation, which is kind of like synchronized keyword in Java but with alternative locks. We may use t">
+    
+    
+      <link rel="icon" href="/css/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    
+
+    <script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+<div id="container"> 
+
+    
+    <div id="wrap">
+	   
+
+<header id="header" class="hdpage">
+    
+    <div id="header-outer" class="outer">
+        
+        <div id="header-inner" class="inner">
+          <nav id="main-nav">
+            <a id="main-nav-toggle" class="nav-icon"></a>
+            
+              <a class="main-nav-link" href="/">
+                  
+                  
+
+                
+                  Home
+                </a>
+            
+              <a class="main-nav-link" href="/category#Java">
+                  
+                  
+
+                
+                  Java
+                </a>
+            
+              <a class="main-nav-link" href="/category#Android">
+                  
+                  
+
+                
+                  Android
+                </a>
+            
+              <a class="main-nav-link" href="/category#Algorithm">
+                  
+                  
+
+                
+                  Algorithm
+                </a>
+            
+              <a class="main-nav-link" href="/category#Leetcode">
+                  
+                  
+
+                
+                  LeetCode
+                </a>
+            
+              <a class="main-nav-link" href="/category">
+                  
+                  
+
+                
+                  Category
+                </a>
+            
+              <a class="main-nav-link" href="/about">
+                  
+                  
+
+                
+                  About
+                </a>
+            
+          </nav>
+          <nav id="sub-nav">
+            
+            <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+          </nav>
+          <div id="search-form-wrap">
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xiangyuzheng.github.io"></form>
+          </div>
+        </div>
+    </div>
+</header>
+		<div class="outer">
+		
+    <article id="post-Java-concurrency-GuardedBy" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="article-meta">
+        
+          <header class="article-header">
+            
+  
+    <a href="/2015/02/20/Java-concurrency-GuardedBy/">
+      <h1 class="article-title" itemprop="name">
+        Java concurrency : @GuardedBy
+      </h1>
+    </a>
+  
+
+
+
+          </header>
+        
+
+        <!--<a href="/2015/02/20/Java-concurrency-GuardedBy/" class="article-date">
+  <time datetime="2015-02-21T01:08:49.000Z" itemprop="datePublished">2015-02-20</time>
+</a>-->
+        <!-- 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+ -->
+      </div>
+      <div class="article-inner">
+            
+            
+              <!--<header class="article-header">
+                
+  
+    <a href="/2015/02/20/Java-concurrency-GuardedBy/">
+      <h1 class="article-title" itemprop="name">
+        Java concurrency : @GuardedBy
+      </h1>
+    </a>
+  
+
+
+
+              </header>-->
+            
+            <div class="article-entry" itemprop="articleBody">
+              <div class="page-toc">
+                
+              </div>
+              
+                <p>When reading <a href="http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android-apps/5.0.2_r1/com/android/providers/downloads/DownloadService.java#DownloadService" target="_blank" rel="external">DownloadService</a> class in Android Open Source Project, I noticed a use of <strong>@GuardedBy</strong> annotation, which is kind of like synchronized keyword in Java but with alternative locks. We may use this annotation as:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">foo</span> </span>&#123;</span><br><span class="line">  <span class="annotation">@GuardedBy</span>(&amp;quot;<span class="keyword">this</span>&amp;quot;)</span><br><span class="line">  <span class="keyword">public</span> String str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>As we can see, the usage is <strong>@GuardedBy(lock)</strong> which means the guarded fields or methods can be accessed by some thread only when the thread is holding the lock. We can specify the lock to the following types:</p>
+<p><strong>this</strong> : The intrinsic lock of the object in whose class the field is defined.<br><strong>class-name.this</strong> : For inner classes, it may be necessary to disambiguate ‘this’; the class-name.this designation allows you to specify which ‘this’ reference is intended<br><strong>itself</strong> : For reference fields only; the object to which the field refers.<br><strong>field-name</strong> : The lock object is referenced by the (instance or static) field specified by field-name.<br><strong>class-name.field-name</strong> : The lock object is reference by the static field specified by class-name.field-name.<br><strong>method-name()</strong> : The lock object is returned by calling the named nil-ary method.<br><strong>class-name.class</strong> : The Class object for the specified class should be used as the lock object.</p>
+<p>An example:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BankAccount</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> Object credential = <span class="keyword">new</span> Object();</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@GuardedBy</span>(&amp;quot;credential&amp;quot;)</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> amount;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In the code snippet above, amount can be accessed when someone has got the synchronization lock of credential, so amount in a BankAccount is guarded by the credential. Let’s add something to this class.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BankAccount</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> Object credential = <span class="keyword">new</span> Object();</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@GuardedBy</span>(&amp;quot;credential&amp;quot;)</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> amount;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@GuardedBy</span>(&amp;quot;listOfTransactions&amp;quot;)</span><br><span class="line">  <span class="keyword">private</span> List&amp;lt;Transaction&amp;gt; listOfTransactions;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We now have a list of Transactions in the BankAccount. The List object has many elements so that it has references to all the elements in the list. Here we use <strong>@GuardedBy(“listOfTransactions”)</strong> to specify that the lock is associated with the objects which listOfTransactions refers to. In other words, someone must hold locks of all the Transactions in order to hold the lock of this List object.</p>
+
+              
+            </div>
+            <footer class="article-footer">
+              <a href="/2015/02/20/Java-concurrency-GuardedBy/" class="article-date">
+  <time datetime="2015-02-21T01:08:49.000Z" itemprop="datePublished">2015-02-20</time>
+</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/02/20/Java-concurrency-GuardedBy/" data-id="cihljd42i00e7qqyuadwww5g4" class="article-share-link">Share</a>
+              
+              
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Concurrency/">Concurrency</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+            </footer>
+      </div>
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2015/02/22/When-to-use-WeakReference-and-WeakHashMap/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          When to use WeakReference and WeakHashMap
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+      
+    </article>
+    <script type="text/javascript">
+      window.onscroll = function(){ 
+        $(function(){
+          var $toc = $('.page-toc'),
+              $article = $('.article-entry')
+              toc_top = $toc.offset().top
+              tocsub_width = $toc.children().width()
+              article_height = $article.children().height()
+              scroll_top = document.body.scrollTop
+              screen_h = $(window).height()
+              footer_top = $('.article-footer').offset().top - $(window).height()
+              if(toc_top&&scroll_top&&scroll_top>toc_top&&scroll_top<footer_top){
+                $toc.children().css({
+                  "position": "fixed",
+                  "height": (screen_h -20)+'px',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',tocsub_width+'px')
+              }else{
+                $toc.children().css({
+                  "position": "relative",
+                  "height":'inherit',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',0+'px')
+              }
+        })
+      } 
+    </script>
+
+
+
+
+
+
+
+
+		</div>
+		
+
+<footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+        <div class="left">
+            &copy; 2015 Xiangyu Zheng<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/jaywcjlove/hexoThemeKacper">hexoThemeKacper </a>
+        </div>
+        <div class="right">
+            
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+  var $img = $('.article-entry img'),
+      $link = $img.css({
+        "display":"inline-block"
+      }).parent()
+
+  if($link.parent().is("a")){
+      $img.each(function(idx,item) {
+      $(this).parent().attr('href',$(this).parent().parent().attr('href'))
+    })
+  }
+})
+</script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  	</div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/category#Java" class="mobile-nav-link">Java</a>
+  
+    <a href="/category#Android" class="mobile-nav-link">Android</a>
+  
+    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+  
+    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+  
+    <a href="/category" class="mobile-nav-link">Category</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+</div>
+</body>
+</html>
+

@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Array Questions | Happy Birthday to Dolly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
+    <meta name="description" content="##QuestionThere are many questions about sorted arrays. When we solve these questions, we should always think about two pointers, reverse operations, binary search, start from the end, sort it first,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Array Questions">
+<meta property="og:url" content="http://xiangyuzheng.github.io/2015/03/26/Sorted-Array-Questions/index.html">
+<meta property="og:site_name" content="Happy Birthday to Dolly">
+<meta property="og:description" content="##QuestionThere are many questions about sorted arrays. When we solve these questions, we should always think about two pointers, reverse operations, binary search, start from the end, sort it first,">
+<meta property="og:updated_time" content="2015-06-25T07:26:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Array Questions">
+<meta name="twitter:description" content="##QuestionThere are many questions about sorted arrays. When we solve these questions, we should always think about two pointers, reverse operations, binary search, start from the end, sort it first,">
+    
+    
+      <link rel="icon" href="/css/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    
+
+    <script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+<div id="container"> 
+
+    
+    <div id="wrap">
+	   
+
+<header id="header" class="hdpage">
+    
+    <div id="header-outer" class="outer">
+        
+        <div id="header-inner" class="inner">
+          <nav id="main-nav">
+            <a id="main-nav-toggle" class="nav-icon"></a>
+            
+              <a class="main-nav-link" href="/">
+                  
+                  
+
+                
+                  Home
+                </a>
+            
+              <a class="main-nav-link" href="/category#Java">
+                  
+                  
+
+                
+                  Java
+                </a>
+            
+              <a class="main-nav-link" href="/category#Android">
+                  
+                  
+
+                
+                  Android
+                </a>
+            
+              <a class="main-nav-link" href="/category#Algorithm">
+                  
+                  
+
+                
+                  Algorithm
+                </a>
+            
+              <a class="main-nav-link" href="/category#Leetcode">
+                  
+                  
+
+                
+                  LeetCode
+                </a>
+            
+              <a class="main-nav-link" href="/category">
+                  
+                  
+
+                
+                  Category
+                </a>
+            
+              <a class="main-nav-link" href="/about">
+                  
+                  
+
+                
+                  About
+                </a>
+            
+          </nav>
+          <nav id="sub-nav">
+            
+            <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+          </nav>
+          <div id="search-form-wrap">
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xiangyuzheng.github.io"></form>
+          </div>
+        </div>
+    </div>
+</header>
+		<div class="outer">
+		
+    <article id="post-Sorted-Array-Questions" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="article-meta">
+        
+          <header class="article-header">
+            
+  
+    <a href="/2015/03/26/Sorted-Array-Questions/">
+      <h1 class="article-title" itemprop="name">
+        Array Questions
+      </h1>
+    </a>
+  
+
+
+
+          </header>
+        
+
+        <!--<a href="/2015/03/26/Sorted-Array-Questions/" class="article-date">
+  <time datetime="2015-03-27T06:41:27.000Z" itemprop="datePublished">2015-03-26</time>
+</a>-->
+        <!-- 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+  </div>
+ -->
+      </div>
+      <div class="article-inner">
+            
+            
+              <!--<header class="article-header">
+                
+  
+    <a href="/2015/03/26/Sorted-Array-Questions/">
+      <h1 class="article-title" itemprop="name">
+        Array Questions
+      </h1>
+    </a>
+  
+
+
+
+              </header>-->
+            
+            <div class="article-entry" itemprop="articleBody">
+              <div class="page-toc">
+                
+              </div>
+              
+                <p>##Question<br>There are many questions about sorted arrays. When we solve these questions, we should always think about two pointers, reverse operations, binary search, start from the end, sort it first, etc.</p>
+<a id="more"></a>
+<p>##Related Questions</p>
+<ol>
+<li><a href="http://xiangyuzheng.github.io/2015/03/25/Remove-Duplicates-from-Sorted-Array/">Remove Duplicates from Sorted Array</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/03/25/Remove-Duplicates-from-Sorted-Array-II/">Remove Duplicates from Sorted Array II</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/03/25/Merge-Sorted-Array/">Merge Sorted Array</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/03/26/Median-of-Two-Sorted-Arrays/">Median of Two Sorted Arrays</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/03/26/Recover-Rotated-Sorted-Array/">Recover Rotated Sorted Array</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/03/26/Reverse-Words-in-a-String/">Reverse Words in a String</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/06/05/Longest-Consecutive-Sequence/">Longest Consecutive Sequence</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/06/06/Remove-Element/">Remove Element</a> Two pointers</li>
+<li><a href="http://xiangyuzheng.github.io/2015/06/07/Count-and-Say/">Count and Say</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/06/07/First-Missing-Positive/">First Missing Positive</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/06/10/Gas-Station/">Gas Station</a> - Greedy</li>
+<li><a href="http://xiangyuzheng.github.io/2015/06/10/Candy/">Candy</a> - Greedy</li>
+<li><a href="http://xiangyuzheng.github.io/2015/06/11/Maximum-Gap/">Maximum Gap</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/06/12/Majority-Element/">Majority Element</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/06/14/Minimum-Size-Subarray-Sum/">Minimum Size Subarray Sum</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/06/15/Shortest-Palindrome/">Shortest Palindrome</a></li>
+<li><a href="">Contains Duplicate</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/06/15/Contains-Duplicate-II/">Contains Duplicate II</a></li>
+<li><a href="http://xiangyuzheng.github.io/2015/06/25/Contains-Duplicate-III/">Contains Duplicate III</a> TreeSet - a sorted set.</li>
+</ol>
+
+              
+            </div>
+            <footer class="article-footer">
+              <a href="/2015/03/26/Sorted-Array-Questions/" class="article-date">
+  <time datetime="2015-03-27T06:41:27.000Z" itemprop="datePublished">2015-03-26</time>
+</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/03/26/Sorted-Array-Questions/" data-id="cihljd3vk003uqqyu30w9sony" class="article-share-link">Share</a>
+              
+              
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-template/">Coding template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sorted-array/">Sorted array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Two-pointers/">Two pointers</a></li></ul>
+
+            </footer>
+      </div>
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2015/03/28/Divide-and-Conquer-DFS-on-Binary-Tree/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Divide and Conquer &amp; DFS
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/03/26/Reverse-Words-in-a-String/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">[Leetcode] Reverse Words in a String</div>
+    </a>
+  
+</nav>
+
+      
+    </article>
+    <script type="text/javascript">
+      window.onscroll = function(){ 
+        $(function(){
+          var $toc = $('.page-toc'),
+              $article = $('.article-entry')
+              toc_top = $toc.offset().top
+              tocsub_width = $toc.children().width()
+              article_height = $article.children().height()
+              scroll_top = document.body.scrollTop
+              screen_h = $(window).height()
+              footer_top = $('.article-footer').offset().top - $(window).height()
+              if(toc_top&&scroll_top&&scroll_top>toc_top&&scroll_top<footer_top){
+                $toc.children().css({
+                  "position": "fixed",
+                  "height": (screen_h -20)+'px',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',tocsub_width+'px')
+              }else{
+                $toc.children().css({
+                  "position": "relative",
+                  "height":'inherit',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',0+'px')
+              }
+        })
+      } 
+    </script>
+
+
+
+
+
+
+
+
+		</div>
+		
+
+<footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+        <div class="left">
+            &copy; 2015 Xiangyu Zheng<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/jaywcjlove/hexoThemeKacper">hexoThemeKacper </a>
+        </div>
+        <div class="right">
+            
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+  var $img = $('.article-entry img'),
+      $link = $img.css({
+        "display":"inline-block"
+      }).parent()
+
+  if($link.parent().is("a")){
+      $img.each(function(idx,item) {
+      $(this).parent().attr('href',$(this).parent().parent().attr('href'))
+    })
+  }
+})
+</script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  	</div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/category#Java" class="mobile-nav-link">Java</a>
+  
+    <a href="/category#Android" class="mobile-nav-link">Android</a>
+  
+    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+  
+    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+  
+    <a href="/category" class="mobile-nav-link">Category</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+</div>
+</body>
+</html>
+
