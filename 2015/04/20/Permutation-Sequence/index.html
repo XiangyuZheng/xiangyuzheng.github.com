@@ -7,22 +7,22 @@
     <title>[Leetcode] Permutation Sequence | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionThe set [1,2,3,…,n] contains a total of n! unique permutations.
+    <meta name="description" content="QuestionThe set [1,2,3,…,n] contains a total of n! unique permutations.
 By listing and labeling all of the permutations in order,We get the following sequence (ie, for n = 3):
-“123”“132”“213”“231”“3">
+“123”“132”“213”“231”“312">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Permutation Sequence">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/04/20/Permutation-Sequence/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionThe set [1,2,3,…,n] contains a total of n! unique permutations.
+<meta property="og:description" content="QuestionThe set [1,2,3,…,n] contains a total of n! unique permutations.
 By listing and labeling all of the permutations in order,We get the following sequence (ie, for n = 3):
-“123”“132”“213”“231”“3">
-<meta property="og:updated_time" content="2015-07-06T02:34:17.000Z">
+“123”“132”“213”“231”“312">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Permutation Sequence">
-<meta name="twitter:description" content="##QuestionThe set [1,2,3,…,n] contains a total of n! unique permutations.
+<meta name="twitter:description" content="QuestionThe set [1,2,3,…,n] contains a total of n! unique permutations.
 By listing and labeling all of the permutations in order,We get the following sequence (ie, for n = 3):
-“123”“132”“213”“231”“3">
+“123”“132”“213”“231”“312">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -56,7 +56,7 @@ By listing and labeling all of the permutations in order,We get the following se
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -64,7 +64,7 @@ By listing and labeling all of the permutations in order,We get the following se
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -72,7 +72,7 @@ By listing and labeling all of the permutations in order,We get the following se
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -80,7 +80,7 @@ By listing and labeling all of the permutations in order,We get the following se
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -163,16 +163,16 @@ By listing and labeling all of the permutations in order,We get the following se
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>The set [1,2,3,…,n] contains a total of n! unique permutations.</p>
+                <h2 id="Question">Question</h2><p>The set [1,2,3,…,n] contains a total of n! unique permutations.</p>
 <p>By listing and labeling all of the permutations in order,<br>We get the following sequence (ie, for n = 3):</p>
 <p>“123”<br>“132”<br>“213”<br>“231”<br>“312”<br>“321”<br>Given n and k, return the kth permutation sequence.</p>
 <p>Note: Given n will be between 1 and 9 inclusive.<br><a id="more"></a></p>
-<p>##Solution<br>It’s reasonable to use backtracking, but it’ll cause TLE.<br>Here is a math solution: <a href="http://www.shuatiblog.com/blog/2014/05/19/Permutation-Sequence/" target="_blank" rel="external">Blog</a></p>
+<h2 id="Solution">Solution</h2><p>It’s reasonable to use backtracking, but it’ll cause TLE.<br>Here is a math solution: <a href="http://www.shuatiblog.com/blog/2014/05/19/Permutation-Sequence/" target="_blank" rel="external">Blog</a></p>
 <p>Another solution(recomemmended) is to make use of nextPermutation().</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPermutation</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> index = k - <span class="number">1</span>;</span><br><span class="line">        List&lt;Integer&gt; nums = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            nums.add(i);</span><br><span class="line">        &#125;</span><br><span class="line">        String res = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">int</span> fact = factorial(i);</span><br><span class="line">            <span class="keyword">int</span> nextIndex = index / fact;</span><br><span class="line">            index = index % fact;</span><br><span class="line">            res += nums.remove(nextIndex);</span><br><span class="line">        &#125;</span><br><span class="line">        res += nums.get(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++) &#123;</span><br><span class="line">            ans *= i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPermutation</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> index = k - <span class="number">1</span>;</span><br><span class="line">        List&lt;Integer&gt; nums = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            nums.add(i);</span><br><span class="line">        &#125;</span><br><span class="line">        String res = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">int</span> fact = factorial(i);</span><br><span class="line">            <span class="keyword">int</span> nextIndex = index / fact;</span><br><span class="line">            index = index % fact;</span><br><span class="line">            res += nums.remove(nextIndex);</span><br><span class="line">        &#125;</span><br><span class="line">        res += nums.get(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++) &#123;</span><br><span class="line">            ans *= i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Use nextPermutation.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPermutation</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] nums = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            nums[i] = i + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k; i++) &#123;</span><br><span class="line">            nextPermutation(nums);</span><br><span class="line">        &#125;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            sb.append(num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">nextPermutation</span><span class="params">(<span class="keyword">int</span>[] num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = num.length;</span><br><span class="line">        <span class="keyword">if</span> (len &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> partition = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num[i] &lt; num[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                partition = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (partition != -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> change = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">                <span class="keyword">if</span> (num[i] &gt; num[partition]) &#123;</span><br><span class="line">                    change = i;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(num, partition, change);</span><br><span class="line">        &#125;</span><br><span class="line">        reverse(num, partition + <span class="number">1</span>, len - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] num, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = num[i];</span><br><span class="line">        num[i] = num[j];</span><br><span class="line">        num[j] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span>[] num, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            swap(num, left, right);</span><br><span class="line">            left++;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
               
@@ -181,7 +181,7 @@ By listing and labeling all of the permutations in order,We get the following se
               <a href="/2015/04/20/Permutation-Sequence/" class="article-date">
   <time datetime="2015-04-21T06:02:00.000Z" itemprop="datePublished">2015-04-20</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/04/20/Permutation-Sequence/" data-id="cihljxz8l0087t0yutze7i7t6" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/04/20/Permutation-Sequence/" data-id="cihloqmkd00872xyuryieqd8o" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Backtracking/">Backtracking</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Permutation/">Permutation</a></li></ul>
@@ -291,13 +291,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

@@ -7,16 +7,16 @@
     <title>BST Node Insertion / Deletion | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionBST insertion and deletion">
+    <meta name="description" content="QuestionBST insertion and deletion">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BST Node Insertion / Deletion">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/05/25/BST-Node-Insertion-Deletion/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionBST insertion and deletion">
-<meta property="og:updated_time" content="2015-05-26T04:41:15.000Z">
+<meta property="og:description" content="QuestionBST insertion and deletion">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BST Node Insertion / Deletion">
-<meta name="twitter:description" content="##QuestionBST insertion and deletion">
+<meta name="twitter:description" content="QuestionBST insertion and deletion">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -50,7 +50,7 @@
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -58,7 +58,7 @@
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -66,7 +66,7 @@
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -74,7 +74,7 @@
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -157,13 +157,12 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">2.</span> <span class="toc-text">Java code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##Insertion"><span class="toc-number">3.</span> <span class="toc-text">#Insertion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##Deletion"><span class="toc-number">4.</span> <span class="toc-text">#Deletion</span></a></li></ol>
               </div>
               
-                <p>##Question<br>BST insertion and deletion<br><a id="more"></a></p>
-<p>##Java code</p>
-<p>###Insertion<br>Insertion is easy, we just need to find the place according to the current position. Insertion may not maintain the balance of BST.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(TreeNode node, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (value == node.val)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (value &lt; node.val) &#123;</span><br><span class="line">        <span class="keyword">if</span> (node.left == <span class="keyword">null</span>) &#123;</span><br><span class="line">            node.left = <span class="keyword">new</span> TreeNode(value);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> add(node.left, value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value &gt; node.val) &#123;</span><br><span class="line">        <span class="keyword">if</span> (node.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">            node.right = <span class="keyword">new</span> TreeNode(value);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> add(node.right, value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>###Deletion<br>Deletion is complicated.</p>
+                <h2 id="Question">Question</h2><p>BST insertion and deletion<br><a id="more"></a></p>
+<h2 id="Java_code">Java code</h2><h2 id="#Insertion">#Insertion</h2><p>Insertion is easy, we just need to find the place according to the current position. Insertion may not maintain the balance of BST.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(TreeNode node, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (value == node.val)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (value &lt; node.val) &#123;</span><br><span class="line">        <span class="keyword">if</span> (node.left == <span class="keyword">null</span>) &#123;</span><br><span class="line">            node.left = <span class="keyword">new</span> TreeNode(value);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> add(node.left, value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value &gt; node.val) &#123;</span><br><span class="line">        <span class="keyword">if</span> (node.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">            node.right = <span class="keyword">new</span> TreeNode(value);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> add(node.right, value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="#Deletion">#Deletion</h2><p>Deletion is complicated.</p>
 <ol>
 <li>If the node(node1) to be deleted has a left sub tree.<br> 1) find the max node(node2) in its left sub tree, delete it.<br> 2) Replace node1 with node2.</li>
 <li>If node1 has no left sub tree.<br> 1) Replace node1 with its right child.</li>
@@ -177,7 +176,7 @@
               <a href="/2015/05/25/BST-Node-Insertion-Deletion/" class="article-date">
   <time datetime="2015-05-26T04:20:29.000Z" itemprop="datePublished">2015-05-25</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/05/25/BST-Node-Insertion-Deletion/" data-id="cihljxzh900lmt0yuur6k2jlu" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/05/25/BST-Node-Insertion-Deletion/" data-id="cihloqmsw00lm2xyuw05n1nz7" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BST/">BST</a></li></ul>
@@ -287,13 +286,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

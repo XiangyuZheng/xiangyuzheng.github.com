@@ -7,25 +7,25 @@
     <title>[Lintcode] Previous Permutation | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a list of integers, which denote a permutation.
+    <meta name="description" content="QuestionGiven a list of integers, which denote a permutation.
 Find the previous permutation in ascending order.
 ExampleFor [1,3,2,3], the previous permutation is [1,2,3,3]
-For [1,2,3,4], the previou">
+For [1,2,3,4], the previous">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Lintcode] Previous Permutation">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/04/19/Previous-Permuation/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a list of integers, which denote a permutation.
+<meta property="og:description" content="QuestionGiven a list of integers, which denote a permutation.
 Find the previous permutation in ascending order.
 ExampleFor [1,3,2,3], the previous permutation is [1,2,3,3]
-For [1,2,3,4], the previou">
-<meta property="og:updated_time" content="2015-07-06T01:13:30.000Z">
+For [1,2,3,4], the previous">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Lintcode] Previous Permutation">
-<meta name="twitter:description" content="##QuestionGiven a list of integers, which denote a permutation.
+<meta name="twitter:description" content="QuestionGiven a list of integers, which denote a permutation.
 Find the previous permutation in ascending order.
 ExampleFor [1,3,2,3], the previous permutation is [1,2,3,3]
-For [1,2,3,4], the previou">
+For [1,2,3,4], the previous">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -59,7 +59,7 @@ For [1,2,3,4], the previou">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -67,7 +67,7 @@ For [1,2,3,4], the previou">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -75,7 +75,7 @@ For [1,2,3,4], the previou">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -83,7 +83,7 @@ For [1,2,3,4], the previou">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -166,21 +166,21 @@ For [1,2,3,4], the previou">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a list of integers, which denote a permutation.</p>
+                <h2 id="Question">Question</h2><p>Given a list of integers, which denote a permutation.</p>
 <p>Find the previous permutation in ascending order.</p>
 <p>Example<br>For [1,3,2,3], the previous permutation is [1,2,3,3]</p>
 <p>For [1,2,3,4], the previous permutation is [4,3,2,1]<br><a id="more"></a></p>
-<p>##Solution<br>The same as “Next Permuation”<br>Steps:</p>
+<h2 id="Solution">Solution</h2><p>The same as “Next Permuation”<br>Steps:</p>
 <ol>
 <li>From right to left, find the first number that violate the <strong>decreasing</strong> order. Store it as partition number.</li>
 <li>From right to left, find the first number that is <strong>smaller</strong> than the partition number. Store it as change number.</li>
 <li>Swap partition number and change number.</li>
 <li>Reverse all the items after the original partition index.</li>
 </ol>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * <span class="doctag">@param</span> nums: A list of integers</span><br><span class="line">     * <span class="doctag">@return</span>: A list of integers that's previous permuation</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Integer&gt; <span class="title">previousPermuation</span><span class="params">(ArrayList&lt;Integer&gt; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums;</span><br><span class="line">        &#125;</span><br><span class="line">		<span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span> (len &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> partition = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums.get(i) &gt; nums.get(i + <span class="number">1</span>)) &#123;</span><br><span class="line">                partition = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (partition != -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> change = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums.get(i) &lt; nums.get(partition)) &#123;</span><br><span class="line">                    change = i;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(nums, partition, change);</span><br><span class="line">        &#125;</span><br><span class="line">        reverse(nums, partition + <span class="number">1</span>, len - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(ArrayList&lt;Integer&gt; nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = nums.get(i);</span><br><span class="line">        nums.set(i, nums.get(j));</span><br><span class="line">        nums.set(j, tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">reverse</span><span class="params">(ArrayList&lt;Integer&gt; nums, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            swap(nums, left, right);</span><br><span class="line">            left++;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * <span class="doctag">@param</span> nums: A list of integers</span><br><span class="line">     * <span class="doctag">@return</span>: A list of integers that's previous permuation</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Integer&gt; <span class="title">previousPermuation</span><span class="params">(ArrayList&lt;Integer&gt; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums;</span><br><span class="line">        &#125;</span><br><span class="line">		<span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span> (len &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> partition = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums.get(i) &gt; nums.get(i + <span class="number">1</span>)) &#123;</span><br><span class="line">                partition = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (partition != -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> change = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums.get(i) &lt; nums.get(partition)) &#123;</span><br><span class="line">                    change = i;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(nums, partition, change);</span><br><span class="line">        &#125;</span><br><span class="line">        reverse(nums, partition + <span class="number">1</span>, len - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(ArrayList&lt;Integer&gt; nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = nums.get(i);</span><br><span class="line">        nums.set(i, nums.get(j));</span><br><span class="line">        nums.set(j, tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">reverse</span><span class="params">(ArrayList&lt;Integer&gt; nums, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            swap(nums, left, right);</span><br><span class="line">            left++;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -188,7 +188,7 @@ For [1,2,3,4], the previou">
               <a href="/2015/04/19/Previous-Permuation/" class="article-date">
   <time datetime="2015-04-20T05:48:38.000Z" itemprop="datePublished">2015-04-19</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/04/19/Previous-Permuation/" data-id="cihljxz87007nt0yu1ezmg37f" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/04/19/Previous-Permuation/" data-id="cihloqmjy007n2xyuerdxuhd0" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Permutation/">Permutation</a></li></ul>
@@ -298,13 +298,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

@@ -7,22 +7,22 @@
     <title>[Lintcode] Majority Number III | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven an array of integers and a number k, the majority number is the number that occurs more than 1/k of the size of the array.
+    <meta name="description" content="QuestionGiven an array of integers and a number k, the majority number is the number that occurs more than 1/k of the size of the array.
 Find it.
-ExampleGiven [3,1,2,3,2,3,3,4,4,4] and k=3, return 3">
+ExampleGiven [3,1,2,3,2,3,3,4,4,4] and k=3, return 3.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Lintcode] Majority Number III">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/05/03/Majority-Number-III/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven an array of integers and a number k, the majority number is the number that occurs more than 1/k of the size of the array.
+<meta property="og:description" content="QuestionGiven an array of integers and a number k, the majority number is the number that occurs more than 1/k of the size of the array.
 Find it.
-ExampleGiven [3,1,2,3,2,3,3,4,4,4] and k=3, return 3">
-<meta property="og:updated_time" content="2015-05-04T06:28:05.000Z">
+ExampleGiven [3,1,2,3,2,3,3,4,4,4] and k=3, return 3.">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Lintcode] Majority Number III">
-<meta name="twitter:description" content="##QuestionGiven an array of integers and a number k, the majority number is the number that occurs more than 1/k of the size of the array.
+<meta name="twitter:description" content="QuestionGiven an array of integers and a number k, the majority number is the number that occurs more than 1/k of the size of the array.
 Find it.
-ExampleGiven [3,1,2,3,2,3,3,4,4,4] and k=3, return 3">
+ExampleGiven [3,1,2,3,2,3,3,4,4,4] and k=3, return 3.">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -56,7 +56,7 @@ ExampleGiven [3,1,2,3,2,3,3,4,4,4] and k=3, return 3">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -64,7 +64,7 @@ ExampleGiven [3,1,2,3,2,3,3,4,4,4] and k=3, return 3">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -72,7 +72,7 @@ ExampleGiven [3,1,2,3,2,3,3,4,4,4] and k=3, return 3">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -80,7 +80,7 @@ ExampleGiven [3,1,2,3,2,3,3,4,4,4] and k=3, return 3">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -163,17 +163,17 @@ ExampleGiven [3,1,2,3,2,3,3,4,4,4] and k=3, return 3">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given an array of integers and a number k, the majority number is the number that occurs more than 1/k of the size of the array.</p>
+                <h2 id="Question">Question</h2><p>Given an array of integers and a number k, the majority number is the number that occurs more than 1/k of the size of the array.</p>
 <p>Find it.</p>
 <p>Example<br>Given [3,1,2,3,2,3,3,4,4,4] and k=3, return 3.</p>
 <p>Note<br>There is only one majority number in the array.</p>
 <p>Challenge<br>O(n) time and O(k) extra space<br><a id="more"></a></p>
-<p>##Solution<br>We need k-1 space to keep track of a list of candidates. Refer to <a href="http://www.geeksforgeeks.org/given-an-array-of-of-size-n-finds-all-the-elements-that-appear-more-than-nk-times/" target="_blank" rel="external">GFG</a></p>
+<h2 id="Solution">Solution</h2><p>We need k-1 space to keep track of a list of candidates. Refer to <a href="http://www.geeksforgeeks.org/given-an-array-of-of-size-n-finds-all-the-elements-that-appear-more-than-nk-times/" target="_blank" rel="external">GFG</a></p>
 <p>Note that we can’t remove elements in a hashmap when iterating it, so we should firstly copy the key set.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * <span class="doctag">@param</span> nums: A list of integers</span><br><span class="line">     * <span class="doctag">@param</span> k: As described</span><br><span class="line">     * <span class="doctag">@return</span>: The majority number</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">majorityNumber</span><span class="params">(ArrayList&lt;Integer&gt; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(nums.get(i))) &#123;</span><br><span class="line">                map.put(nums.get(i), map.get(nums.get(i)) + <span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (map.size() &lt; k) &#123;</span><br><span class="line">                map.put(nums.get(i), <span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                Set&lt;Integer&gt; keys = <span class="keyword">new</span> HashSet&lt;Integer&gt;(map.keySet());</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> key : keys) &#123;</span><br><span class="line">                    map.put(key, map.get(key) - <span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">if</span> (map.get(key) == <span class="number">0</span>) &#123;</span><br><span class="line">                        map.remove(key);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> key : map.keySet()) &#123;</span><br><span class="line">        	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            	<span class="keyword">if</span> (num == key) &#123;</span><br><span class="line">            		count++;</span><br><span class="line">            	&#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (count &gt; len / k) &#123;</span><br><span class="line">            	<span class="keyword">return</span> key; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * <span class="doctag">@param</span> nums: A list of integers</span><br><span class="line">     * <span class="doctag">@param</span> k: As described</span><br><span class="line">     * <span class="doctag">@return</span>: The majority number</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">majorityNumber</span><span class="params">(ArrayList&lt;Integer&gt; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(nums.get(i))) &#123;</span><br><span class="line">                map.put(nums.get(i), map.get(nums.get(i)) + <span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (map.size() &lt; k) &#123;</span><br><span class="line">                map.put(nums.get(i), <span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                Set&lt;Integer&gt; keys = <span class="keyword">new</span> HashSet&lt;Integer&gt;(map.keySet());</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> key : keys) &#123;</span><br><span class="line">                    map.put(key, map.get(key) - <span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">if</span> (map.get(key) == <span class="number">0</span>) &#123;</span><br><span class="line">                        map.remove(key);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> key : map.keySet()) &#123;</span><br><span class="line">        	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            	<span class="keyword">if</span> (num == key) &#123;</span><br><span class="line">            		count++;</span><br><span class="line">            	&#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (count &gt; len / k) &#123;</span><br><span class="line">            	<span class="keyword">return</span> key; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -181,7 +181,7 @@ ExampleGiven [3,1,2,3,2,3,3,4,4,4] and k=3, return 3">
               <a href="/2015/05/03/Majority-Number-III/" class="article-date">
   <time datetime="2015-05-04T06:16:55.000Z" itemprop="datePublished">2015-05-03</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/05/03/Majority-Number-III/" data-id="cihljxzay00bxt0yu42whtj05" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/05/03/Majority-Number-III/" data-id="cihloqmmq00bx2xyu99ob5tle" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li></ul>
@@ -291,13 +291,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

@@ -7,25 +7,25 @@
     <title>[Leetcode] Remove Nth Node From End of List | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a linked list, remove the nth node from the end of list and return its head.
+    <meta name="description" content="QuestionGiven a linked list, remove the nth node from the end of list and return its head.
 For example,
    Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
-   After removing the second node">
+   After removing the second node fr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Remove Nth Node From End of List">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/06/01/Remove-Nth-Node-From-End-of-List/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a linked list, remove the nth node from the end of list and return its head.
+<meta property="og:description" content="QuestionGiven a linked list, remove the nth node from the end of list and return its head.
 For example,
    Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
-   After removing the second node">
-<meta property="og:updated_time" content="2015-06-02T06:43:56.000Z">
+   After removing the second node fr">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Remove Nth Node From End of List">
-<meta name="twitter:description" content="##QuestionGiven a linked list, remove the nth node from the end of list and return its head.
+<meta name="twitter:description" content="QuestionGiven a linked list, remove the nth node from the end of list and return its head.
 For example,
    Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
-   After removing the second node">
+   After removing the second node fr">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -59,7 +59,7 @@ For example,
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -67,7 +67,7 @@ For example,
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -75,7 +75,7 @@ For example,
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -83,7 +83,7 @@ For example,
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -166,15 +166,15 @@ For example,
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a linked list, remove the nth node from the end of list and return its head.</p>
+                <h2 id="Question">Question</h2><p>Given a linked list, remove the nth node from the end of list and return its head.</p>
 <p>For example,</p>
 <p>   Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.</p>
 <p>   After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.<br>Note:<br>Given n will always be valid.<br>Try to do this in one pass.<br><a id="more"></a></p>
-<p>##Solution<br>If we want to do it in one pass, always think of two pointers!.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">removeNthFromEnd</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode left = head;</span><br><span class="line">        ListNode right = head;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            right = right.next;</span><br><span class="line">            <span class="keyword">if</span> (right == <span class="keyword">null</span>) &#123;</span><br><span class="line">                right = head;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (right.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            left = left.next;</span><br><span class="line">            right = right.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (left.next == <span class="keyword">null</span>) &#123; <span class="comment">// If head should be removed</span></span><br><span class="line">            <span class="keyword">return</span> head.next;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            left.next = left.next.next;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><p>If we want to do it in one pass, always think of two pointers!.</p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">removeNthFromEnd</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode left = head;</span><br><span class="line">        ListNode right = head;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            right = right.next;</span><br><span class="line">            <span class="keyword">if</span> (right == <span class="keyword">null</span>) &#123;</span><br><span class="line">                right = head;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (right.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            left = left.next;</span><br><span class="line">            right = right.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (left.next == <span class="keyword">null</span>) &#123; <span class="comment">// If head should be removed</span></span><br><span class="line">            <span class="keyword">return</span> head.next;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            left.next = left.next.next;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -182,7 +182,7 @@ For example,
               <a href="/2015/06/01/Remove-Nth-Node-From-End-of-List/" class="article-date">
   <time datetime="2015-06-02T06:42:42.000Z" itemprop="datePublished">2015-06-01</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/06/01/Remove-Nth-Node-From-End-of-List/" data-id="cihljxz7j006mt0yuw2xwdup8" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/06/01/Remove-Nth-Node-From-End-of-List/" data-id="cihloqmjd006m2xyudyjadep6" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Two-pointers/">Two pointers</a></li></ul>
@@ -292,13 +292,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

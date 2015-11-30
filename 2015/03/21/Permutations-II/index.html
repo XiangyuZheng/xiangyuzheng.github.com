@@ -7,19 +7,19 @@
     <title>[Leetcode] Permutations II | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a collection of numbers that might contain duplicates, return all possible unique permutations.
-For example,[1,1,2] have the following unique permutations:[1,1,2], [1,2,1], and [2,1,1]">
+    <meta name="description" content="QuestionGiven a collection of numbers that might contain duplicates, return all possible unique permutations.
+For example,[1,1,2] have the following unique permutations:[1,1,2], [1,2,1], and [2,1,1].">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Permutations II">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/03/21/Permutations-II/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a collection of numbers that might contain duplicates, return all possible unique permutations.
-For example,[1,1,2] have the following unique permutations:[1,1,2], [1,2,1], and [2,1,1]">
-<meta property="og:updated_time" content="2015-04-05T20:35:31.000Z">
+<meta property="og:description" content="QuestionGiven a collection of numbers that might contain duplicates, return all possible unique permutations.
+For example,[1,1,2] have the following unique permutations:[1,1,2], [1,2,1], and [2,1,1].">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Permutations II">
-<meta name="twitter:description" content="##QuestionGiven a collection of numbers that might contain duplicates, return all possible unique permutations.
-For example,[1,1,2] have the following unique permutations:[1,1,2], [1,2,1], and [2,1,1]">
+<meta name="twitter:description" content="QuestionGiven a collection of numbers that might contain duplicates, return all possible unique permutations.
+For example,[1,1,2] have the following unique permutations:[1,1,2], [1,2,1], and [2,1,1].">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -53,7 +53,7 @@ For example,[1,1,2] have the following unique permutations:[1,1,2], [1,2,1], and
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -61,7 +61,7 @@ For example,[1,1,2] have the following unique permutations:[1,1,2], [1,2,1], and
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -69,7 +69,7 @@ For example,[1,1,2] have the following unique permutations:[1,1,2], [1,2,1], and
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -77,7 +77,7 @@ For example,[1,1,2] have the following unique permutations:[1,1,2], [1,2,1], and
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -160,14 +160,14 @@ For example,[1,1,2] have the following unique permutations:[1,1,2], [1,2,1], and
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a collection of numbers that might contain duplicates, return all possible unique permutations.</p>
+                <h2 id="Question">Question</h2><p>Given a collection of numbers that might contain duplicates, return all possible unique permutations.</p>
 <p>For example,<br>[1,1,2] have the following unique permutations:<br>[1,1,2], [1,2,1], and [2,1,1].</p>
 <a id="more"></a>
-<p>##Solution<br>This question is similar to Permutation I, but with duplicates. The idea to remove duplicates in this question is to skip some numbers. E.g., if we have <strong>2, 1, 2</strong>, then there will be <strong>1, 2, 2</strong> and <strong>1, 2, 2</strong> in the permutations. The twos are added in different order but looks the same. For this, we just need to limit the order. A number can be added only if its previous same one has been added. We just skip the number if its previous same one has not been added.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; permuteUnique(<span class="keyword">int</span>[] num) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line">        List&lt;Integer&gt; item = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        Arrays.sort(num);</span><br><span class="line">        helper(result, item, <span class="keyword">new</span> <span class="keyword">int</span>[num.length], num);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; result, List&lt;Integer&gt; item, <span class="keyword">int</span>[] visited, <span class="keyword">int</span>[] num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (item.size() == num.length) &#123;</span><br><span class="line">            result.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(item));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (visited[i] == <span class="number">1</span>) &#123; <span class="comment">// Checks if the current number has been visited.</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; num[i] == num[i - <span class="number">1</span>] &amp;&amp; visited[i - <span class="number">1</span>] == <span class="number">0</span>) &#123; <span class="comment">// Checks visiting the numbers in order.</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            visited[i] = <span class="number">1</span>;</span><br><span class="line">            item.add(num[i]);</span><br><span class="line">            helper(result, item, visited, num);</span><br><span class="line">            visited[i] = <span class="number">0</span>;</span><br><span class="line">            item.remove(item.size() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><p>This question is similar to Permutation I, but with duplicates. The idea to remove duplicates in this question is to skip some numbers. E.g., if we have <strong>2, 1, 2</strong>, then there will be <strong>1, 2, 2</strong> and <strong>1, 2, 2</strong> in the permutations. The twos are added in different order but looks the same. For this, we just need to limit the order. A number can be added only if its previous same one has been added. We just skip the number if its previous same one has not been added.</p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; permuteUnique(<span class="keyword">int</span>[] num) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line">        List&lt;Integer&gt; item = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        Arrays.sort(num);</span><br><span class="line">        helper(result, item, <span class="keyword">new</span> <span class="keyword">int</span>[num.length], num);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; result, List&lt;Integer&gt; item, <span class="keyword">int</span>[] visited, <span class="keyword">int</span>[] num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (item.size() == num.length) &#123;</span><br><span class="line">            result.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(item));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (visited[i] == <span class="number">1</span>) &#123; <span class="comment">// Checks if the current number has been visited.</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; num[i] == num[i - <span class="number">1</span>] &amp;&amp; visited[i - <span class="number">1</span>] == <span class="number">0</span>) &#123; <span class="comment">// Checks visiting the numbers in order.</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            visited[i] = <span class="number">1</span>;</span><br><span class="line">            item.add(num[i]);</span><br><span class="line">            helper(result, item, visited, num);</span><br><span class="line">            visited[i] = <span class="number">0</span>;</span><br><span class="line">            item.remove(item.size() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -175,7 +175,7 @@ For example,[1,1,2] have the following unique permutations:[1,1,2], [1,2,1], and
               <a href="/2015/03/21/Permutations-II/" class="article-date">
   <time datetime="2015-03-22T04:02:50.000Z" itemprop="datePublished">2015-03-21</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/03/21/Permutations-II/" data-id="cihljxz8i0084t0yuauqaytcq" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/03/21/Permutations-II/" data-id="cihloqmk800842xyukbb3uvq1" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Backtracking/">Backtracking</a></li></ul>
@@ -285,13 +285,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

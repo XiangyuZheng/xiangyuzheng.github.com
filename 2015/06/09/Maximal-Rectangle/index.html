@@ -7,16 +7,16 @@
     <title>[Leetcode] Maximal Rectangle | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing all ones and return its area.">
+    <meta name="description" content="QuestionGiven a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing all ones and return its area.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Maximal Rectangle">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/06/09/Maximal-Rectangle/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing all ones and return its area.">
-<meta property="og:updated_time" content="2015-06-10T05:19:40.000Z">
+<meta property="og:description" content="QuestionGiven a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing all ones and return its area.">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Maximal Rectangle">
-<meta name="twitter:description" content="##QuestionGiven a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing all ones and return its area.">
+<meta name="twitter:description" content="QuestionGiven a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing all ones and return its area.">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -50,7 +50,7 @@
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -58,7 +58,7 @@
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -66,7 +66,7 @@
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -74,7 +74,7 @@
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -157,12 +157,12 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing all ones and return its area.<br><a id="more"></a></p>
-<p>##Solution<br>Use a stack, calculate each row as question “Largest Rectangle in Histogram”.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximalRectangle</span><span class="params">(<span class="keyword">char</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> h = matrix.length;</span><br><span class="line">        <span class="keyword">if</span> (h == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> w = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">if</span> (w == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; h; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; w; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                    matrix[i][j] = (<span class="keyword">char</span>)(matrix[i - <span class="number">1</span>][j] + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        Stack&lt;Integer&gt; s;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; h; i++) &#123;</span><br><span class="line">            s = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">            <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (cur &lt; w) &#123;</span><br><span class="line">                <span class="keyword">if</span> (s.isEmpty() || matrix[i][cur] &gt; matrix[i][s.peek()]) &#123;</span><br><span class="line">                    s.push(cur);</span><br><span class="line">                    cur++;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">int</span> pre = s.pop();</span><br><span class="line">                    <span class="keyword">int</span> height = matrix[i][pre] - <span class="string">'0'</span>;</span><br><span class="line">                    <span class="keyword">int</span> width = s.isEmpty() ? cur : cur - s.peek() - <span class="number">1</span>;</span><br><span class="line">                    max = Math.max(max, height * width);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (!s.isEmpty()) &#123;</span><br><span class="line">                <span class="keyword">int</span> pre = s.pop();</span><br><span class="line">                <span class="keyword">int</span> height = matrix[i][pre] - <span class="string">'0'</span>;</span><br><span class="line">                <span class="keyword">int</span> width = s.isEmpty() ? cur : cur - s.peek() - <span class="number">1</span>;</span><br><span class="line">                max = Math.max(max, height * width);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+                <h2 id="Question">Question</h2><p>Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing all ones and return its area.<br><a id="more"></a></p>
+<h2 id="Solution">Solution</h2><p>Use a stack, calculate each row as question “Largest Rectangle in Histogram”.</p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximalRectangle</span><span class="params">(<span class="keyword">char</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> h = matrix.length;</span><br><span class="line">        <span class="keyword">if</span> (h == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> w = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">if</span> (w == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; h; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; w; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                    matrix[i][j] = (<span class="keyword">char</span>)(matrix[i - <span class="number">1</span>][j] + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        Stack&lt;Integer&gt; s;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; h; i++) &#123;</span><br><span class="line">            s = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">            <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (cur &lt; w) &#123;</span><br><span class="line">                <span class="keyword">if</span> (s.isEmpty() || matrix[i][cur] &gt; matrix[i][s.peek()]) &#123;</span><br><span class="line">                    s.push(cur);</span><br><span class="line">                    cur++;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">int</span> pre = s.pop();</span><br><span class="line">                    <span class="keyword">int</span> height = matrix[i][pre] - <span class="string">'0'</span>;</span><br><span class="line">                    <span class="keyword">int</span> width = s.isEmpty() ? cur : cur - s.peek() - <span class="number">1</span>;</span><br><span class="line">                    max = Math.max(max, height * width);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (!s.isEmpty()) &#123;</span><br><span class="line">                <span class="keyword">int</span> pre = s.pop();</span><br><span class="line">                <span class="keyword">int</span> height = matrix[i][pre] - <span class="string">'0'</span>;</span><br><span class="line">                <span class="keyword">int</span> width = s.isEmpty() ? cur : cur - s.peek() - <span class="number">1</span>;</span><br><span class="line">                max = Math.max(max, height * width);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -170,7 +170,7 @@
               <a href="/2015/06/09/Maximal-Rectangle/" class="article-date">
   <time datetime="2015-06-10T05:18:02.000Z" itemprop="datePublished">2015-06-09</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/06/09/Maximal-Rectangle/" data-id="cihljxzap00bkt0yufgs7y25s" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/06/09/Maximal-Rectangle/" data-id="cihloqmmi00bk2xyu2pzd0nd1" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stack/">Stack</a></li></ul>
@@ -280,13 +280,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

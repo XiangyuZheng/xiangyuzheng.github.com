@@ -7,16 +7,16 @@
     <title>[Leetcode] Median of Two Sorted Arrays | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionThere are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).">
+    <meta name="description" content="QuestionThere are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Median of Two Sorted Arrays">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/03/26/Median-of-Two-Sorted-Arrays/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionThere are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).">
-<meta property="og:updated_time" content="2015-03-27T06:00:50.000Z">
+<meta property="og:description" content="QuestionThere are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Median of Two Sorted Arrays">
-<meta name="twitter:description" content="##QuestionThere are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).">
+<meta name="twitter:description" content="QuestionThere are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -50,7 +50,7 @@
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -58,7 +58,7 @@
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -66,7 +66,7 @@
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -74,7 +74,7 @@
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -157,13 +157,13 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).<br><a id="more"></a></p>
-<p>##Solution<br>This is a hard question. If m == n, then the question is easy. When m != n, we couldn’t apply general binary search algorithm. Instead, we can use a findK algorithm.</p>
+                <h2 id="Question">Question</h2><p>There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).<br><a id="more"></a></p>
+<h2 id="Solution">Solution</h2><p>This is a hard question. If m == n, then the question is easy. When m != n, we couldn’t apply general binary search algorithm. Instead, we can use a findK algorithm.</p>
 <p>To implement findK(), we get the k/2-th element in each array, if they are equal, we are done. If one is smaller than the other, we can get rid of the all the elements before the smaller one, so that we reduce k/2 elements. Now we can continue to look for the (k - k/2)-th element in the rest elements.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> B[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = A.length;</span><br><span class="line">        <span class="keyword">int</span> n = B.length;</span><br><span class="line">        <span class="keyword">if</span> ((m + n) % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> findK(A, <span class="number">0</span>, B, <span class="number">0</span>, (m + n) / <span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> (findK(A, <span class="number">0</span>, B, <span class="number">0</span>, (m + n) / <span class="number">2</span> + <span class="number">1</span>) + findK(A, <span class="number">0</span>, B, <span class="number">0</span>, (m + n) / <span class="number">2</span>)) / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findK</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> aStart, <span class="keyword">int</span> B[], <span class="keyword">int</span> bStart, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> aLen = A.length - aStart;</span><br><span class="line">        <span class="keyword">int</span> bLen = B.length - bStart;</span><br><span class="line">        <span class="keyword">if</span> (aLen &gt; bLen) &#123;</span><br><span class="line">            <span class="keyword">return</span> findK(B, bStart, A, aStart, k);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (aLen == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> B[k + bStart - <span class="number">1</span>];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (bLen == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> A[k + aStart - <span class="number">1</span>];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (k == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> Math.min(A[aStart], B[bStart]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> aPart = Math.min(k / <span class="number">2</span>, aLen);</span><br><span class="line">        <span class="keyword">int</span> bPart = k - aPart;</span><br><span class="line">        <span class="keyword">if</span> (A[aStart + aPart - <span class="number">1</span>] == B[bStart + bPart - <span class="number">1</span>]) &#123;</span><br><span class="line">            <span class="keyword">return</span> A[aStart + aPart - <span class="number">1</span>];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (A[aStart + aPart - <span class="number">1</span>] &gt; B[bStart + bPart - <span class="number">1</span>])&#123;</span><br><span class="line">            <span class="keyword">return</span> findK(A, aStart, B, bStart + bPart, k - bPart);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> findK(A, aStart + aPart, B, bStart, k - aPart);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> B[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = A.length;</span><br><span class="line">        <span class="keyword">int</span> n = B.length;</span><br><span class="line">        <span class="keyword">if</span> ((m + n) % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> findK(A, <span class="number">0</span>, B, <span class="number">0</span>, (m + n) / <span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> (findK(A, <span class="number">0</span>, B, <span class="number">0</span>, (m + n) / <span class="number">2</span> + <span class="number">1</span>) + findK(A, <span class="number">0</span>, B, <span class="number">0</span>, (m + n) / <span class="number">2</span>)) / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findK</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> aStart, <span class="keyword">int</span> B[], <span class="keyword">int</span> bStart, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> aLen = A.length - aStart;</span><br><span class="line">        <span class="keyword">int</span> bLen = B.length - bStart;</span><br><span class="line">        <span class="keyword">if</span> (aLen &gt; bLen) &#123;</span><br><span class="line">            <span class="keyword">return</span> findK(B, bStart, A, aStart, k);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (aLen == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> B[k + bStart - <span class="number">1</span>];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (bLen == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> A[k + aStart - <span class="number">1</span>];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (k == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> Math.min(A[aStart], B[bStart]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> aPart = Math.min(k / <span class="number">2</span>, aLen);</span><br><span class="line">        <span class="keyword">int</span> bPart = k - aPart;</span><br><span class="line">        <span class="keyword">if</span> (A[aStart + aPart - <span class="number">1</span>] == B[bStart + bPart - <span class="number">1</span>]) &#123;</span><br><span class="line">            <span class="keyword">return</span> A[aStart + aPart - <span class="number">1</span>];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (A[aStart + aPart - <span class="number">1</span>] &gt; B[bStart + bPart - <span class="number">1</span>])&#123;</span><br><span class="line">            <span class="keyword">return</span> findK(A, aStart, B, bStart + bPart, k - bPart);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> findK(A, aStart + aPart, B, bStart, k - aPart);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -171,7 +171,7 @@
               <a href="/2015/03/26/Median-of-Two-Sorted-Arrays/" class="article-date">
   <time datetime="2015-03-27T05:53:17.000Z" itemprop="datePublished">2015-03-26</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/03/26/Median-of-Two-Sorted-Arrays/" data-id="cihljxzae00b0t0yun5ee8j6j" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/03/26/Median-of-Two-Sorted-Arrays/" data-id="cihloqmm700b02xyu7tub2ea5" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Binary-search/">Binary search</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Divide-and-conquer/">Divide and conquer</a></li></ul>
@@ -281,13 +281,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

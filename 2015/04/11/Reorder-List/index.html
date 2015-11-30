@@ -7,22 +7,22 @@
     <title>[Leetcode] Reorder List | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a singly linked list L: L0→L1→…→Ln-1→Ln,reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
+    <meta name="description" content="QuestionGiven a singly linked list L: L0→L1→…→Ln-1→Ln,reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
 You must do this in-place without altering the nodes’ values.
-For example,Given {1,2,3,4}, reorder it to">
+For example,Given {1,2,3,4}, reorder it to {1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Reorder List">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/04/11/Reorder-List/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a singly linked list L: L0→L1→…→Ln-1→Ln,reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
+<meta property="og:description" content="QuestionGiven a singly linked list L: L0→L1→…→Ln-1→Ln,reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
 You must do this in-place without altering the nodes’ values.
-For example,Given {1,2,3,4}, reorder it to">
-<meta property="og:updated_time" content="2015-04-12T04:05:13.000Z">
+For example,Given {1,2,3,4}, reorder it to {1">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Reorder List">
-<meta name="twitter:description" content="##QuestionGiven a singly linked list L: L0→L1→…→Ln-1→Ln,reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
+<meta name="twitter:description" content="QuestionGiven a singly linked list L: L0→L1→…→Ln-1→Ln,reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
 You must do this in-place without altering the nodes’ values.
-For example,Given {1,2,3,4}, reorder it to">
+For example,Given {1,2,3,4}, reorder it to {1">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -56,7 +56,7 @@ For example,Given {1,2,3,4}, reorder it to">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -64,7 +64,7 @@ For example,Given {1,2,3,4}, reorder it to">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -72,7 +72,7 @@ For example,Given {1,2,3,4}, reorder it to">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -80,7 +80,7 @@ For example,Given {1,2,3,4}, reorder it to">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -163,19 +163,19 @@ For example,Given {1,2,3,4}, reorder it to">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a singly linked list L: L0→L1→…→Ln-1→Ln,<br>reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…</p>
+                <h2 id="Question">Question</h2><p>Given a singly linked list L: L0→L1→…→Ln-1→Ln,<br>reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…</p>
 <p>You must do this in-place without altering the nodes’ values.</p>
 <p>For example,<br>Given {1,2,3,4}, reorder it to {1,4,2,3}.<br><a id="more"></a></p>
-<p>##Solution<br>Three steps:</p>
+<h2 id="Solution">Solution</h2><p>Three steps:</p>
 <ol>
 <li>break the list into two.</li>
 <li>reverse the second list.</li>
 <li>merge the two lists.</li>
 </ol>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reorderList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//1. break the list into two.</span></span><br><span class="line">        ListNode slow = head, fast = head.next;</span><br><span class="line">        <span class="keyword">while</span> (fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode secondHead = slow.next;</span><br><span class="line">        slow.next = <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//2. reverse the second list.</span></span><br><span class="line">        ListNode pre = <span class="keyword">null</span>, cur = secondHead;</span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">            ListNode tmp = cur.next;</span><br><span class="line">            cur.next = pre;</span><br><span class="line">            pre = cur;</span><br><span class="line">            cur = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        secondHead = pre;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//3. merge the two lists.</span></span><br><span class="line">        ListNode dummy = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line">        ListNode p = dummy;</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span> &amp;&amp; secondHead != <span class="keyword">null</span>) &#123;</span><br><span class="line">            p.next = head;</span><br><span class="line">            head = head.next;</span><br><span class="line">            p.next.next = secondHead;</span><br><span class="line">            secondHead = secondHead.next;</span><br><span class="line">            p = p.next.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            p.next = head;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        head = dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reorderList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//1. break the list into two.</span></span><br><span class="line">        ListNode slow = head, fast = head.next;</span><br><span class="line">        <span class="keyword">while</span> (fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode secondHead = slow.next;</span><br><span class="line">        slow.next = <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//2. reverse the second list.</span></span><br><span class="line">        ListNode pre = <span class="keyword">null</span>, cur = secondHead;</span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">            ListNode tmp = cur.next;</span><br><span class="line">            cur.next = pre;</span><br><span class="line">            pre = cur;</span><br><span class="line">            cur = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        secondHead = pre;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//3. merge the two lists.</span></span><br><span class="line">        ListNode dummy = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line">        ListNode p = dummy;</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span> &amp;&amp; secondHead != <span class="keyword">null</span>) &#123;</span><br><span class="line">            p.next = head;</span><br><span class="line">            head = head.next;</span><br><span class="line">            p.next.next = secondHead;</span><br><span class="line">            secondHead = secondHead.next;</span><br><span class="line">            p = p.next.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            p.next = head;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        head = dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -183,7 +183,7 @@ For example,Given {1,2,3,4}, reorder it to">
               <a href="/2015/04/11/Reorder-List/" class="article-date">
   <time datetime="2015-04-12T04:03:21.000Z" itemprop="datePublished">2015-04-11</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/04/11/Reorder-List/" data-id="cihljxz7g006jt0yu253wqpgy" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/04/11/Reorder-List/" data-id="cihloqmja006j2xyubp384m1v" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linked-list/">Linked list</a></li></ul>
@@ -293,13 +293,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

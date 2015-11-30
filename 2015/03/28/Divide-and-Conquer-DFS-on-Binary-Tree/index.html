@@ -7,16 +7,16 @@
     <title>Divide and Conquer &amp; DFS | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionsThere are many problems about divide and conquer:Merge sortQuick sortMost of B-tree questions.">
+    <meta name="description" content="QuestionsThere are many problems about divide and conquer:Merge sortQuick sortMost of B-tree questions.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Divide and Conquer & DFS">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/03/28/Divide-and-Conquer-DFS-on-Binary-Tree/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionsThere are many problems about divide and conquer:Merge sortQuick sortMost of B-tree questions.">
-<meta property="og:updated_time" content="2015-06-22T01:48:40.000Z">
+<meta property="og:description" content="QuestionsThere are many problems about divide and conquer:Merge sortQuick sortMost of B-tree questions.">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Divide and Conquer & DFS">
-<meta name="twitter:description" content="##QuestionsThere are many problems about divide and conquer:Merge sortQuick sortMost of B-tree questions.">
+<meta name="twitter:description" content="QuestionsThere are many problems about divide and conquer:Merge sortQuick sortMost of B-tree questions.">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -50,7 +50,7 @@
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -58,7 +58,7 @@
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -66,7 +66,7 @@
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -74,7 +74,7 @@
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -157,11 +157,11 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Questions"><span class="toc-number">1.</span> <span class="toc-text">Questions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Template"><span class="toc-number">3.</span> <span class="toc-text">Template</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Related_questions"><span class="toc-number">4.</span> <span class="toc-text">Related questions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##1-_Tree_Traveral"><span class="toc-number">5.</span> <span class="toc-text">#1. Tree Traveral</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##2-_D&C"><span class="toc-number">6.</span> <span class="toc-text">#2. D&C</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##3-_LCA_questions"><span class="toc-number">7.</span> <span class="toc-text">#3. LCA questions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##4-_Additional"><span class="toc-number">8.</span> <span class="toc-text">#4. Additional</span></a></li></ol>
               </div>
               
-                <p>##Questions<br>There are many problems about divide and conquer:<br>Merge sort<br>Quick sort<br>Most of B-tree questions.<br><a id="more"></a></p>
-<p>##Solution<br>For divide and conquer questions. There are two steps:</p>
+                <h2 id="Questions">Questions</h2><p>There are many problems about divide and conquer:<br>Merge sort<br>Quick sort<br>Most of B-tree questions.<br><a id="more"></a></p>
+<h2 id="Solution">Solution</h2><p>For divide and conquer questions. There are two steps:</p>
 <ol>
 <li>Divide. Solve sub-problems.</li>
 <li>Conquer. Calculate result value based on child results.</li>
@@ -171,12 +171,11 @@
 <li>Divide. Solve problems on left sub-tree and right sub-tree. Sometimes sub-trees are invalid, then usually -1 will be returned.</li>
 <li>Conquer. Calculate result value based on sub-results.</li>
 </ol>
-<p>##Template<br>DFS, D&amp;C, Bottom-up<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ResultType <span class="title">traversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Null or leaf</span></span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// Do something and return.</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Divide</span></span><br><span class="line">        ResultType left = traversal(root.left);</span><br><span class="line">        ResultType right = traversal(root.right);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Conquer</span></span><br><span class="line">        ResultType result = Merge from left and right.</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>##Related questions</p>
-<p>###1. Tree Traveral<br><a href="http://xiangyuzheng.github.io/2015/03/28/Binary-Tree-Preorder-Traversal/">Binary Tree Preorder Traversal</a><br><a href="http://xiangyuzheng.github.io/2015/03/31/Binary-Tree-Inorder-Traversal/">Binary Tree Inorder Traversal</a><br><a href="http://xiangyuzheng.github.io/2015/03/31/Binary-Tree-Postorder-Traversal/">Binary Tree Postorder Traversal</a><br><a href="http://xiangyuzheng.github.io/2015/06/12/Binary-Search-Tree-Iterator/">Binary Search Tree Iterator</a> Preorder traversal<br><a href="http://xiangyuzheng.github.io/2015/06/14/Binary-Tree-Right-Side-View/">Binary Tree Right Side View</a></p>
-<p>###2. D&amp;C<br><a href="http://www.shuatiblog.com/blog/2014/05/25/Maximum-Depth-of-Binary-Tree/" target="_blank" rel="external">Maximum Depth of Binary Tree</a><br><a href="http://xiangyuzheng.github.io/2015/03/31/Minimum-Depth-of-Binary-Tree/">Minimum Depth of Binary Tree</a><br><a href="http://xiangyuzheng.github.io/2015/04/01/Balanced-Binary-Tree/">Balanced Binary Tree</a><br><a href="http://xiangyuzheng.github.io/2015/04/01/Binary-Tree-Maximum-Path-Sum/">Binary Tree Maximum Path Sum</a><br><a href="http://xiangyuzheng.github.io/2015/06/09/Path-Sum/">Path Sum</a><br><a href="http://xiangyuzheng.github.io/2015/06/10/Path-Sum-II/">Path Sum II</a><br><a href="http://xiangyuzheng.github.io/2015/06/10/Sum-Root-to-Leaf-Numbers/">Sum Root to Leaf Numbers</a><br><a href="http://xiangyuzheng.github.io/2015/06/15/Count-Complete-Tree-Nodes/">Count Complete Tree Nodes</a></p>
-<p>###3. LCA questions<br><a href="http://xiangyuzheng.github.io/2015/04/04/Lowest-Common-Ancestor-of-a-Binary-Search-Tree/">Lowest Common Ancestor of a Binary Search Tree</a><br><a href="http://xiangyuzheng.github.io/2015/04/04/Lowest-Common-Ancestor-of-a-Binary-Tree-Part-I/">Lowest Common Ancestor of a Binary Tree Part I</a><br><a href="http://xiangyuzheng.github.io/2015/04/04/Lowest-Common-Ancestor-of-Binary-Tree-Part-II/">Lowest Common Ancestor of Binary Tree Part II</a></p>
-<p>###4. Additional<br><a href="http://xiangyuzheng.github.io/2015/05/26/Iterator-of-Binary-Search-Tree/">Implement iterator of Binary Search Tree</a><br><a href="http://xiangyuzheng.github.io/2015/05/26/Binary-Tree-Serialize-and-Deserialize/">Binary Tree Serialize and Deserialize</a><br><a href="http://xiangyuzheng.github.io/2015/05/26/Populating-Next-Right-Pointers-in-Each-Node/">Populating Next Right Pointers in Each Node</a><br><a href="http://xiangyuzheng.github.io/2015/05/26/Populating-Next-Right-Pointers-in-Each-Node-II/">Populating Next Right Pointers in Each Node II</a><br><a href="http://xiangyuzheng.github.io/2015/05/26/Symmetric-Tree/">Symmetric Tree</a><br><a href="http://xiangyuzheng.github.io/2015/05/26/Same-Tree/">Same Tree</a><br><a href="http://xiangyuzheng.github.io/2015/06/14/Number-of-Islands/">Number of Islands</a></p>
+<h2 id="Template">Template</h2><p>DFS, D&amp;C, Bottom-up<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ResultType <span class="title">traversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Null or leaf</span></span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// Do something and return.</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Divide</span></span><br><span class="line">        ResultType left = traversal(root.left);</span><br><span class="line">        ResultType right = traversal(root.right);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Conquer</span></span><br><span class="line">        ResultType result = Merge from left and right.</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Related_questions">Related questions</h2><h2 id="#1-_Tree_Traveral">#1. Tree Traveral</h2><p><a href="http://xiangyuzheng.github.io/2015/03/28/Binary-Tree-Preorder-Traversal/">Binary Tree Preorder Traversal</a><br><a href="http://xiangyuzheng.github.io/2015/03/31/Binary-Tree-Inorder-Traversal/">Binary Tree Inorder Traversal</a><br><a href="http://xiangyuzheng.github.io/2015/03/31/Binary-Tree-Postorder-Traversal/">Binary Tree Postorder Traversal</a><br><a href="http://xiangyuzheng.github.io/2015/06/12/Binary-Search-Tree-Iterator/">Binary Search Tree Iterator</a> Preorder traversal<br><a href="http://xiangyuzheng.github.io/2015/06/14/Binary-Tree-Right-Side-View/">Binary Tree Right Side View</a></p>
+<h2 id="#2-_D&amp;C">#2. D&amp;C</h2><p><a href="http://www.shuatiblog.com/blog/2014/05/25/Maximum-Depth-of-Binary-Tree/" target="_blank" rel="external">Maximum Depth of Binary Tree</a><br><a href="http://xiangyuzheng.github.io/2015/03/31/Minimum-Depth-of-Binary-Tree/">Minimum Depth of Binary Tree</a><br><a href="http://xiangyuzheng.github.io/2015/04/01/Balanced-Binary-Tree/">Balanced Binary Tree</a><br><a href="http://xiangyuzheng.github.io/2015/04/01/Binary-Tree-Maximum-Path-Sum/">Binary Tree Maximum Path Sum</a><br><a href="http://xiangyuzheng.github.io/2015/06/09/Path-Sum/">Path Sum</a><br><a href="http://xiangyuzheng.github.io/2015/06/10/Path-Sum-II/">Path Sum II</a><br><a href="http://xiangyuzheng.github.io/2015/06/10/Sum-Root-to-Leaf-Numbers/">Sum Root to Leaf Numbers</a><br><a href="http://xiangyuzheng.github.io/2015/06/15/Count-Complete-Tree-Nodes/">Count Complete Tree Nodes</a></p>
+<h2 id="#3-_LCA_questions">#3. LCA questions</h2><p><a href="http://xiangyuzheng.github.io/2015/04/04/Lowest-Common-Ancestor-of-a-Binary-Search-Tree/">Lowest Common Ancestor of a Binary Search Tree</a><br><a href="http://xiangyuzheng.github.io/2015/04/04/Lowest-Common-Ancestor-of-a-Binary-Tree-Part-I/">Lowest Common Ancestor of a Binary Tree Part I</a><br><a href="http://xiangyuzheng.github.io/2015/04/04/Lowest-Common-Ancestor-of-Binary-Tree-Part-II/">Lowest Common Ancestor of Binary Tree Part II</a></p>
+<h2 id="#4-_Additional">#4. Additional</h2><p><a href="http://xiangyuzheng.github.io/2015/05/26/Iterator-of-Binary-Search-Tree/">Implement iterator of Binary Search Tree</a><br><a href="http://xiangyuzheng.github.io/2015/05/26/Binary-Tree-Serialize-and-Deserialize/">Binary Tree Serialize and Deserialize</a><br><a href="http://xiangyuzheng.github.io/2015/05/26/Populating-Next-Right-Pointers-in-Each-Node/">Populating Next Right Pointers in Each Node</a><br><a href="http://xiangyuzheng.github.io/2015/05/26/Populating-Next-Right-Pointers-in-Each-Node-II/">Populating Next Right Pointers in Each Node II</a><br><a href="http://xiangyuzheng.github.io/2015/05/26/Symmetric-Tree/">Symmetric Tree</a><br><a href="http://xiangyuzheng.github.io/2015/05/26/Same-Tree/">Same Tree</a><br><a href="http://xiangyuzheng.github.io/2015/06/14/Number-of-Islands/">Number of Islands</a></p>
 
               
             </div>
@@ -184,7 +183,7 @@
               <a href="/2015/03/28/Divide-and-Conquer-DFS-on-Binary-Tree/" class="article-date">
   <time datetime="2015-03-29T06:31:50.000Z" itemprop="datePublished">2015-03-28</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/03/28/Divide-and-Conquer-DFS-on-Binary-Tree/" data-id="cihljxzep00h2t0yu9gtmdr8b" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/03/28/Divide-and-Conquer-DFS-on-Binary-Tree/" data-id="cihloqmqf00h22xyunbn7d7gm" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-template/">Coding template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFS/">DFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Divide-and-conquer/">Divide and conquer</a></li></ul>
@@ -294,13 +293,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

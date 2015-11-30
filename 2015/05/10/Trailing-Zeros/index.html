@@ -7,20 +7,20 @@
     <title>[Lintcode] Trailing Zeros | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionWrite an algorithm which computes the number of trailing zeros in n factorial.
+    <meta name="description" content="QuestionWrite an algorithm which computes the number of trailing zeros in n factorial.
 Example11! = 39916800, so the out should be 2
 ChallengeO(log N) time">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Lintcode] Trailing Zeros">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/05/10/Trailing-Zeros/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionWrite an algorithm which computes the number of trailing zeros in n factorial.
+<meta property="og:description" content="QuestionWrite an algorithm which computes the number of trailing zeros in n factorial.
 Example11! = 39916800, so the out should be 2
 ChallengeO(log N) time">
-<meta property="og:updated_time" content="2015-05-11T03:32:20.000Z">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Lintcode] Trailing Zeros">
-<meta name="twitter:description" content="##QuestionWrite an algorithm which computes the number of trailing zeros in n factorial.
+<meta name="twitter:description" content="QuestionWrite an algorithm which computes the number of trailing zeros in n factorial.
 Example11! = 39916800, so the out should be 2
 ChallengeO(log N) time">
     
@@ -56,7 +56,7 @@ ChallengeO(log N) time">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -64,7 +64,7 @@ ChallengeO(log N) time">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -72,7 +72,7 @@ ChallengeO(log N) time">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -80,7 +80,7 @@ ChallengeO(log N) time">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -163,14 +163,14 @@ ChallengeO(log N) time">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Write an algorithm which computes the number of trailing zeros in n factorial.</p>
+                <h2 id="Question">Question</h2><p>Write an algorithm which computes the number of trailing zeros in n factorial.</p>
 <p>Example<br>11! = 39916800, so the out should be 2</p>
 <p>Challenge<br>O(log N) time<br><a id="more"></a></p>
-<p>##Solution<br>A trailing zero is produced by 2 * 5.<br>This question basically is couting the number of factor 5 (because factor 2 is always sufficient).<br>Refer to <a href="http://www.purplemath.com/modules/factzero.htm" target="_blank" rel="external">this blog</a> for details.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span><br><span class="line">     * param n: As desciption</span><br><span class="line">     * return: An integer, denote the number of trailing zeros in n!</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">trailingZeros</span><span class="params">(<span class="keyword">long</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> d = <span class="number">5</span>;</span><br><span class="line">        <span class="keyword">while</span> (d &lt;= n) &#123;</span><br><span class="line">            res += n / d;</span><br><span class="line">            d *= <span class="number">5</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><p>A trailing zero is produced by 2 * 5.<br>This question basically is couting the number of factor 5 (because factor 2 is always sufficient).<br>Refer to <a href="http://www.purplemath.com/modules/factzero.htm" target="_blank" rel="external">this blog</a> for details.</p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span><br><span class="line">     * param n: As desciption</span><br><span class="line">     * return: An integer, denote the number of trailing zeros in n!</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">trailingZeros</span><span class="params">(<span class="keyword">long</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> d = <span class="number">5</span>;</span><br><span class="line">        <span class="keyword">while</span> (d &lt;= n) &#123;</span><br><span class="line">            res += n / d;</span><br><span class="line">            d *= <span class="number">5</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -178,7 +178,7 @@ ChallengeO(log N) time">
               <a href="/2015/05/10/Trailing-Zeros/" class="article-date">
   <time datetime="2015-05-11T03:29:42.000Z" itemprop="datePublished">2015-05-10</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/05/10/Trailing-Zeros/" data-id="cihljxz4i002it0yuby3zmafc" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/05/10/Trailing-Zeros/" data-id="cihloqmgi002i2xyuog5am61s" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li></ul>
@@ -288,13 +288,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

@@ -7,22 +7,22 @@
     <title>[Leetcode] Wildcard Matching | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionImplement wildcard pattern matching with support for ‘?’ and ‘*’.
+    <meta name="description" content="QuestionImplement wildcard pattern matching with support for ‘?’ and ‘*’.
 ‘?’ Matches any single character.‘*’ Matches any sequence of characters (including the empty sequence).
-The matching should">
+The matching should co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Wildcard Matching">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/05/22/Wildcard-Matching/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionImplement wildcard pattern matching with support for ‘?’ and ‘*’.
+<meta property="og:description" content="QuestionImplement wildcard pattern matching with support for ‘?’ and ‘*’.
 ‘?’ Matches any single character.‘*’ Matches any sequence of characters (including the empty sequence).
-The matching should">
-<meta property="og:updated_time" content="2015-05-23T06:41:37.000Z">
+The matching should co">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Wildcard Matching">
-<meta name="twitter:description" content="##QuestionImplement wildcard pattern matching with support for ‘?’ and ‘*’.
+<meta name="twitter:description" content="QuestionImplement wildcard pattern matching with support for ‘?’ and ‘*’.
 ‘?’ Matches any single character.‘*’ Matches any sequence of characters (including the empty sequence).
-The matching should">
+The matching should co">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -56,7 +56,7 @@ The matching should">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -64,7 +64,7 @@ The matching should">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -72,7 +72,7 @@ The matching should">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -80,7 +80,7 @@ The matching should">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -163,19 +163,19 @@ The matching should">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Implement wildcard pattern matching with support for ‘?’ and ‘*’.</p>
+                <h2 id="Question">Question</h2><p>Implement wildcard pattern matching with support for ‘?’ and ‘*’.</p>
 <p>‘?’ Matches any single character.<br>‘*’ Matches any sequence of characters (including the empty sequence).</p>
 <p>The matching should cover the entire input string (not partial).</p>
 <p>The function prototype should be:<br>bool isMatch(const char <em>s, const char </em>p)</p>
 <p>Some examples:<br>isMatch(“aa”,”a”) → false<br>isMatch(“aa”,”aa”) → true<br>isMatch(“aaa”,”aa”) → false<br>isMatch(“aa”, “<em>“) → true<br>isMatch(“aa”, “a</em>“) → true<br>isMatch(“ab”, “?<em>“) → true<br>isMatch(“aab”, “c</em>a*b”) → false<br><a id="more"></a></p>
-<p>##Solution<br>We can use DFS, but a better way for wild card matching is to use DP.</p>
+<h2 id="Solution">Solution</h2><p>We can use DFS, but a better way for wild card matching is to use DP.</p>
 <p>We need a matrix match[n + 1][m + 1]</p>
 <p>if p.charAt(j)==’*’, m[i][j] = m[i - 1][j - 1] OR m[i][j - 1] OR m[i - 1][j];<br>if p.charAt(j)==’?’, m[i][j] = m[i - 1][j - 1];<br>else, m[i][j] = m[i - 1][j - 1] AND (s.charAt(i - 1) == p.charAt(j - 1));</p>
 <p>Also, we need a pre-check to prevent from Memory Limit Error.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMatch</span><span class="params">(String s, String p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len1 = s.length();</span><br><span class="line">        <span class="keyword">int</span> len2 = p.length();</span><br><span class="line">        <span class="comment">// pre-check</span></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; p.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p.charAt(i)!=<span class="string">'*'</span>) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(count &gt; s.length()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;  </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">boolean</span>[][] m = <span class="keyword">new</span> <span class="keyword">boolean</span>[len1 + <span class="number">1</span>][len2 + <span class="number">1</span>];</span><br><span class="line">        m[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (tmp &lt; len2 &amp;&amp; p.charAt(tmp) == <span class="string">'*'</span>) &#123;</span><br><span class="line">            m[<span class="number">0</span>][tmp + <span class="number">1</span>] = <span class="keyword">true</span>;</span><br><span class="line">            tmp++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= len1; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= len2; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (p.charAt(j - <span class="number">1</span>) == <span class="string">'*'</span>) &#123;</span><br><span class="line">                    m[i][j] = m[i - <span class="number">1</span>][j - <span class="number">1</span>] || m[i][j - <span class="number">1</span>] || m[i - <span class="number">1</span>][j];</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (p.charAt(j - <span class="number">1</span>) == <span class="string">'?'</span>)&#123;</span><br><span class="line">                    m[i][j] = m[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    m[i][j] = m[i - <span class="number">1</span>][j - <span class="number">1</span>] &amp;&amp; (s.charAt(i - <span class="number">1</span>) == p.charAt(j - <span class="number">1</span>));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> m[len1][len2];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMatch</span><span class="params">(String s, String p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len1 = s.length();</span><br><span class="line">        <span class="keyword">int</span> len2 = p.length();</span><br><span class="line">        <span class="comment">// pre-check</span></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; p.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p.charAt(i)!=<span class="string">'*'</span>) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(count &gt; s.length()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;  </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">boolean</span>[][] m = <span class="keyword">new</span> <span class="keyword">boolean</span>[len1 + <span class="number">1</span>][len2 + <span class="number">1</span>];</span><br><span class="line">        m[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (tmp &lt; len2 &amp;&amp; p.charAt(tmp) == <span class="string">'*'</span>) &#123;</span><br><span class="line">            m[<span class="number">0</span>][tmp + <span class="number">1</span>] = <span class="keyword">true</span>;</span><br><span class="line">            tmp++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= len1; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= len2; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (p.charAt(j - <span class="number">1</span>) == <span class="string">'*'</span>) &#123;</span><br><span class="line">                    m[i][j] = m[i - <span class="number">1</span>][j - <span class="number">1</span>] || m[i][j - <span class="number">1</span>] || m[i - <span class="number">1</span>][j];</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (p.charAt(j - <span class="number">1</span>) == <span class="string">'?'</span>)&#123;</span><br><span class="line">                    m[i][j] = m[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    m[i][j] = m[i - <span class="number">1</span>][j - <span class="number">1</span>] &amp;&amp; (s.charAt(i - <span class="number">1</span>) == p.charAt(j - <span class="number">1</span>));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> m[len1][len2];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -183,7 +183,7 @@ The matching should">
               <a href="/2015/05/22/Wildcard-Matching/" class="article-date">
   <time datetime="2015-05-23T06:36:42.000Z" itemprop="datePublished">2015-05-22</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/05/22/Wildcard-Matching/" data-id="cihljxz34000ut0yu5trhckup" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/05/22/Wildcard-Matching/" data-id="cihloqmf7000u2xyuq2jh8p3u" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFS/">DFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DP/">DP</a></li></ul>
@@ -293,13 +293,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

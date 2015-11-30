@@ -7,16 +7,16 @@
     <title>Multi-thread management in Java: ExecutorService | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##OverviewA convenient way to manage threads in Java is to use ExecutorService. It’s a thread pool with an asynchronous execution mechanism and we just need to pass our Runnable or Callable objects to">
+    <meta name="description" content="OverviewA convenient way to manage threads in Java is to use ExecutorService. It’s a thread pool with an asynchronous execution mechanism and we just need to pass our Runnable or Callable objects to E">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Multi-thread management in Java: ExecutorService">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/02/28/Multi-thread-management-in-Java/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##OverviewA convenient way to manage threads in Java is to use ExecutorService. It’s a thread pool with an asynchronous execution mechanism and we just need to pass our Runnable or Callable objects to">
-<meta property="og:updated_time" content="2015-03-01T06:59:43.000Z">
+<meta property="og:description" content="OverviewA convenient way to manage threads in Java is to use ExecutorService. It’s a thread pool with an asynchronous execution mechanism and we just need to pass our Runnable or Callable objects to E">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Multi-thread management in Java: ExecutorService">
-<meta name="twitter:description" content="##OverviewA convenient way to manage threads in Java is to use ExecutorService. It’s a thread pool with an asynchronous execution mechanism and we just need to pass our Runnable or Callable objects to">
+<meta name="twitter:description" content="OverviewA convenient way to manage threads in Java is to use ExecutorService. It’s a thread pool with an asynchronous execution mechanism and we just need to pass our Runnable or Callable objects to E">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -50,7 +50,7 @@
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -58,7 +58,7 @@
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -66,7 +66,7 @@
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -74,7 +74,7 @@
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -157,18 +157,17 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#execute()_and_submit()"><span class="toc-number">1.</span> <span class="toc-text">execute() and submit()</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#execute()_and_submit()"><span class="toc-number">2.</span> <span class="toc-text">execute() and submit()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stop_a_thread_in_thread_pool"><span class="toc-number">3.</span> <span class="toc-text">Stop a thread in thread pool</span></a></li></ol>
               </div>
               
-                <p>##Overview<br>A convenient way to manage threads in Java is to use ExecutorService. It’s a thread pool with an asynchronous execution mechanism and we just need to pass our Runnable or Callable objects to ExecutorService. Here is a simple example:</p>
+                <h2 id="Overview">Overview</h2><p>A convenient way to manage threads in Java is to use ExecutorService. It’s a thread pool with an asynchronous execution mechanism and we just need to pass our Runnable or Callable objects to ExecutorService. Here is a simple example:</p>
 <a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ExecutorService mExecutor = Executors.newFixedThreadPool(<span class="number">10</span>);</span><br><span class="line">Runnable r = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">mExecutor.execute(r);</span><br><span class="line">mExecutor.shutdown();</span><br></pre></td></tr></table></figure>
 <p>In the example, we just pass our Runnable to ExecutorService and everything is done. Note that we set the maximum number of threads running to 10.</p>
 <h2 id="execute()_and_submit()">execute() and submit()</h2><p>We can use mExecutor.execute() to run our tasks. It takes only Runnable objects and returns nothing. We can also use submit() to run the tasks.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ExecutorService mExecutor = Executors.newFixedThreadPool(<span class="number">10</span>);</span><br><span class="line">Runnable r = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Callable c = <span class="keyword">new</span> Callable() &#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">call</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">mExecutor.execute(r);</span><br><span class="line">Future future = mExecutor.submit(c);</span><br><span class="line">future.get();</span><br><span class="line">future.isDone();</span><br><span class="line">mExecutor.shutdown();</span><br></pre></td></tr></table></figure>
 <p>The method submit() takes Runnable or Callable objects and returns a Future object. Using the Future object, we can call future.get() to get the return value of call() (will get null for Runnable). Note that method get() can block the current thread before it returns.</p>
-<p>##Stop a thread in thread pool</p>
-<p>There is no safe way to stop a thread in Java. What we can do is to add our own logic to Runnable or Callable to let threads stop themslves.</p>
+<h2 id="Stop_a_thread_in_thread_pool">Stop a thread in thread pool</h2><p>There is no safe way to stop a thread in Java. What we can do is to add our own logic to Runnable or Callable to let threads stop themslves.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">ExecutorService mExecutor = Executors.newFixedThreadPool(<span class="number">10</span>);</span><br><span class="line">Callable c1 = <span class="keyword">new</span> Callable() &#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">call</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Thread.sleep(<span class="number">10</span>*<span class="number">1000</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Callable c2 = <span class="keyword">new</span> Callable() &#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">call</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(!Thread.currentThread().isInterrupted())&#123;</span><br><span class="line">      <span class="comment">//do something</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Future future1 = mExecutor.submit(c1);</span><br><span class="line">Future future2 = mExecutor.submit(c2);</span><br><span class="line">future1.cancel(<span class="keyword">true</span>);</span><br><span class="line">future2.cancel(<span class="keyword">true</span>);</span><br><span class="line">mExecutor.shutdown();</span><br></pre></td></tr></table></figure>
 <p>Future.cancel() will interrupt the running threads, so the threads that are running c1 and c2 will receive InterruptException. Methods like sleep(), wait() will catch InterruptException and stop the thread, but most of Java methods don’t catch it. Therefore, we should write logic to check whether the current thread is interrupted as in c2.call(). In this way, we can stop a running thread.</p>
 
@@ -178,7 +177,7 @@
               <a href="/2015/02/28/Multi-thread-management-in-Java/" class="article-date">
   <time datetime="2015-02-28T21:38:06.000Z" itemprop="datePublished">2015-02-28</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/02/28/Multi-thread-management-in-Java/" data-id="cihljxz9n009tt0yu77b4h1fh" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/02/28/Multi-thread-management-in-Java/" data-id="cihloqmlg009t2xyuic4qv1mh" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Thread/">Thread</a></li></ul>
@@ -288,13 +287,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

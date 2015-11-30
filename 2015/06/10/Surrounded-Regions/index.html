@@ -7,22 +7,22 @@
     <title>[Leetcode] Surrounded Regions | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.
+    <meta name="description" content="QuestionGiven a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.
 A region is captured by flipping all ‘O’s into ‘X’s in that surrounded region.
-For example,X X X XX O O XX X O">
+For example,X X X XX O O XX X O X">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Surrounded Regions">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/06/10/Surrounded-Regions/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.
+<meta property="og:description" content="QuestionGiven a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.
 A region is captured by flipping all ‘O’s into ‘X’s in that surrounded region.
-For example,X X X XX O O XX X O">
-<meta property="og:updated_time" content="2015-06-11T05:49:23.000Z">
+For example,X X X XX O O XX X O X">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Surrounded Regions">
-<meta name="twitter:description" content="##QuestionGiven a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.
+<meta name="twitter:description" content="QuestionGiven a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.
 A region is captured by flipping all ‘O’s into ‘X’s in that surrounded region.
-For example,X X X XX O O XX X O">
+For example,X X X XX O O XX X O X">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -56,7 +56,7 @@ For example,X X X XX O O XX X O">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -64,7 +64,7 @@ For example,X X X XX O O XX X O">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -72,7 +72,7 @@ For example,X X X XX O O XX X O">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -80,7 +80,7 @@ For example,X X X XX O O XX X O">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -163,19 +163,18 @@ For example,X X X XX O O XX X O">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.</p>
+                <h2 id="Question">Question</h2><p>Given a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.</p>
 <p>A region is captured by flipping all ‘O’s into ‘X’s in that surrounded region.</p>
 <p>For example,<br>X X X X<br>X O O X<br>X X O X<br>X O X X<br>After running your function, the board should be:</p>
 <p>X X X X<br>X X X X<br>X X X X<br>X O X X<br><a id="more"></a></p>
-<p>##Solution</p>
-<ol>
+<h2 id="Solution">Solution</h2><ol>
 <li>Do BFS search at the edges and set all elements visited to ‘V’.</li>
 <li>Now the left ‘O’s are the surrounded ‘O’s.</li>
 </ol>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">char</span>[][] board)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> width = board.length;</span><br><span class="line">        <span class="keyword">if</span> (width == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> height = board[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">if</span> (height == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; width; i++) &#123;</span><br><span class="line">            bfs(board, i, <span class="number">0</span>);</span><br><span class="line">            bfs(board, i, height - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; height; i++) &#123;</span><br><span class="line">            bfs(board, <span class="number">0</span>, i);</span><br><span class="line">            bfs(board, width - <span class="number">1</span>, i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; width; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; height; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="string">'V'</span>) &#123;</span><br><span class="line">                    board[i][j] = <span class="string">'O'</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (board[i][j] == <span class="string">'O'</span>) &#123;</span><br><span class="line">                    board[i][j] = <span class="string">'X'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">char</span>[][] board, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> width = board.length;</span><br><span class="line">        <span class="keyword">int</span> height = board[<span class="number">0</span>].length;</span><br><span class="line">        Queue&lt;Integer&gt; queueX = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        Queue&lt;Integer&gt; queueY = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        queueX.offer(x);</span><br><span class="line">        queueY.offer(y);</span><br><span class="line">        <span class="keyword">while</span> (!queueX.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> curX = queueX.poll();</span><br><span class="line">            <span class="keyword">int</span> curY = queueY.poll();</span><br><span class="line">            <span class="keyword">if</span> (curX &lt; <span class="number">0</span> || curX &gt;= width || curY &lt; <span class="number">0</span> || curY &gt;= height)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span> (board[curX][curY] == <span class="string">'X'</span> || board[curX][curY] == <span class="string">'V'</span>)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            board[curX][curY] = <span class="string">'V'</span>;</span><br><span class="line">            queueX.offer(curX - <span class="number">1</span>);</span><br><span class="line">            queueY.offer(curY);</span><br><span class="line">            queueX.offer(curX + <span class="number">1</span>);</span><br><span class="line">            queueY.offer(curY);</span><br><span class="line">            queueX.offer(curX);</span><br><span class="line">            queueY.offer(curY - <span class="number">1</span>);</span><br><span class="line">            queueX.offer(curX);</span><br><span class="line">            queueY.offer(curY + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">char</span>[][] board)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> width = board.length;</span><br><span class="line">        <span class="keyword">if</span> (width == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> height = board[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">if</span> (height == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; width; i++) &#123;</span><br><span class="line">            bfs(board, i, <span class="number">0</span>);</span><br><span class="line">            bfs(board, i, height - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; height; i++) &#123;</span><br><span class="line">            bfs(board, <span class="number">0</span>, i);</span><br><span class="line">            bfs(board, width - <span class="number">1</span>, i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; width; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; height; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="string">'V'</span>) &#123;</span><br><span class="line">                    board[i][j] = <span class="string">'O'</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (board[i][j] == <span class="string">'O'</span>) &#123;</span><br><span class="line">                    board[i][j] = <span class="string">'X'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">char</span>[][] board, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> width = board.length;</span><br><span class="line">        <span class="keyword">int</span> height = board[<span class="number">0</span>].length;</span><br><span class="line">        Queue&lt;Integer&gt; queueX = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        Queue&lt;Integer&gt; queueY = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        queueX.offer(x);</span><br><span class="line">        queueY.offer(y);</span><br><span class="line">        <span class="keyword">while</span> (!queueX.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> curX = queueX.poll();</span><br><span class="line">            <span class="keyword">int</span> curY = queueY.poll();</span><br><span class="line">            <span class="keyword">if</span> (curX &lt; <span class="number">0</span> || curX &gt;= width || curY &lt; <span class="number">0</span> || curY &gt;= height)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span> (board[curX][curY] == <span class="string">'X'</span> || board[curX][curY] == <span class="string">'V'</span>)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            board[curX][curY] = <span class="string">'V'</span>;</span><br><span class="line">            queueX.offer(curX - <span class="number">1</span>);</span><br><span class="line">            queueY.offer(curY);</span><br><span class="line">            queueX.offer(curX + <span class="number">1</span>);</span><br><span class="line">            queueY.offer(curY);</span><br><span class="line">            queueX.offer(curX);</span><br><span class="line">            queueY.offer(curY - <span class="number">1</span>);</span><br><span class="line">            queueX.offer(curX);</span><br><span class="line">            queueY.offer(curY + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -183,7 +182,7 @@ For example,X X X XX O O XX X O">
               <a href="/2015/06/10/Surrounded-Regions/" class="article-date">
   <time datetime="2015-06-11T05:47:34.000Z" itemprop="datePublished">2015-06-10</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/06/10/Surrounded-Regions/" data-id="cihljxz4w0032t0yuvegw6wf8" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/06/10/Surrounded-Regions/" data-id="cihloqmgx00322xyujofgig2p" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BFS/">BFS</a></li></ul>
@@ -293,13 +292,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

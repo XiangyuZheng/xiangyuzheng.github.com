@@ -7,16 +7,16 @@
     <title>[Leetcode] Dungeon Game | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionThe demons had captured the princess (P) and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of M x N rooms laid out in a 2D grid. Our valiant knight (K) was ini">
+    <meta name="description" content="QuestionThe demons had captured the princess (P) and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of M x N rooms laid out in a 2D grid. Our valiant knight (K) was initi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Dungeon Game">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/06/12/Dungeon-Game/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionThe demons had captured the princess (P) and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of M x N rooms laid out in a 2D grid. Our valiant knight (K) was ini">
-<meta property="og:updated_time" content="2015-06-13T06:21:49.000Z">
+<meta property="og:description" content="QuestionThe demons had captured the princess (P) and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of M x N rooms laid out in a 2D grid. Our valiant knight (K) was initi">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Dungeon Game">
-<meta name="twitter:description" content="##QuestionThe demons had captured the princess (P) and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of M x N rooms laid out in a 2D grid. Our valiant knight (K) was ini">
+<meta name="twitter:description" content="QuestionThe demons had captured the princess (P) and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of M x N rooms laid out in a 2D grid. Our valiant knight (K) was initi">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -50,7 +50,7 @@
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -58,7 +58,7 @@
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -66,7 +66,7 @@
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -74,7 +74,7 @@
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -157,16 +157,16 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>The demons had captured the princess (P) and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of M x N rooms laid out in a 2D grid. Our valiant knight (K) was initially positioned in the top-left room and must fight his way through the dungeon to rescue the princess.</p>
+                <h2 id="Question">Question</h2><p>The demons had captured the princess (P) and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of M x N rooms laid out in a 2D grid. Our valiant knight (K) was initially positioned in the top-left room and must fight his way through the dungeon to rescue the princess.</p>
 <p>The knight has an initial health point represented by a positive integer. If at any point his health point drops to 0 or below, he dies immediately.</p>
 <p>Some of the rooms are guarded by demons, so the knight loses health (negative integers) upon entering these rooms; other rooms are either empty (0’s) or contain magic orbs that increase the knight’s health (positive integers).</p>
 <p>In order to reach the princess as quickly as possible, the knight decides to move only rightward or downward in each step.</p>
 <p>Write a function to determine the knight’s minimum initial health so that he is able to rescue the princess.<br><a id="more"></a></p>
-<p>##Solution<br>A DP solution.<br>dp[i][j] = max(1, min(dp[i+1][j], dp[i][j+1]) – dungeon[i][j]).</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">calculateMinimumHP</span><span class="params">(<span class="keyword">int</span>[][] dungeon)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> height = dungeon.length;</span><br><span class="line">        <span class="keyword">int</span> width = dungeon[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span>[][] need = <span class="keyword">new</span> <span class="keyword">int</span>[height][width];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = height - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = width - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == height - <span class="number">1</span> &amp;&amp; j == width - <span class="number">1</span>) &#123;</span><br><span class="line">                    need[i][j] = Math.max(<span class="number">1</span>, <span class="number">1</span> - dungeon[i][j]);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == height - <span class="number">1</span>) &#123;</span><br><span class="line">                    need[i][j] = Math.max(<span class="number">1</span>, need[i][j + <span class="number">1</span>] - dungeon[i][j]);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j == width - <span class="number">1</span>) &#123;</span><br><span class="line">                    need[i][j] = Math.max(<span class="number">1</span>, need[i + <span class="number">1</span>][j] - dungeon[i][j]);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    need[i][j] = Math.max(<span class="number">1</span>, Math.min(need[i][j + <span class="number">1</span>], need[i + <span class="number">1</span>][j]) - dungeon[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> need[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><p>A DP solution.<br>dp[i][j] = max(1, min(dp[i+1][j], dp[i][j+1]) – dungeon[i][j]).</p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">calculateMinimumHP</span><span class="params">(<span class="keyword">int</span>[][] dungeon)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> height = dungeon.length;</span><br><span class="line">        <span class="keyword">int</span> width = dungeon[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span>[][] need = <span class="keyword">new</span> <span class="keyword">int</span>[height][width];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = height - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = width - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == height - <span class="number">1</span> &amp;&amp; j == width - <span class="number">1</span>) &#123;</span><br><span class="line">                    need[i][j] = Math.max(<span class="number">1</span>, <span class="number">1</span> - dungeon[i][j]);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == height - <span class="number">1</span>) &#123;</span><br><span class="line">                    need[i][j] = Math.max(<span class="number">1</span>, need[i][j + <span class="number">1</span>] - dungeon[i][j]);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j == width - <span class="number">1</span>) &#123;</span><br><span class="line">                    need[i][j] = Math.max(<span class="number">1</span>, need[i + <span class="number">1</span>][j] - dungeon[i][j]);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    need[i][j] = Math.max(<span class="number">1</span>, Math.min(need[i][j + <span class="number">1</span>], need[i + <span class="number">1</span>][j]) - dungeon[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> need[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -174,7 +174,7 @@
               <a href="/2015/06/12/Dungeon-Game/" class="article-date">
   <time datetime="2015-06-13T06:20:39.000Z" itemprop="datePublished">2015-06-12</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/06/12/Dungeon-Game/" data-id="cihljxzen00gzt0yueml2y28h" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/06/12/Dungeon-Game/" data-id="cihloqmqd00gz2xyukid92v1h" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DP/">DP</a></li></ul>
@@ -284,13 +284,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

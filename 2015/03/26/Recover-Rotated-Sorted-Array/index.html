@@ -7,16 +7,16 @@
     <title>[Lintcode] Recover Rotated Sorted Array | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a rotated sorted array, recover it to sorted array in-place.">
+    <meta name="description" content="QuestionGiven a rotated sorted array, recover it to sorted array in-place.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Lintcode] Recover Rotated Sorted Array">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/03/26/Recover-Rotated-Sorted-Array/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a rotated sorted array, recover it to sorted array in-place.">
-<meta property="og:updated_time" content="2015-03-27T06:30:48.000Z">
+<meta property="og:description" content="QuestionGiven a rotated sorted array, recover it to sorted array in-place.">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Lintcode] Recover Rotated Sorted Array">
-<meta name="twitter:description" content="##QuestionGiven a rotated sorted array, recover it to sorted array in-place.">
+<meta name="twitter:description" content="QuestionGiven a rotated sorted array, recover it to sorted array in-place.">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -50,7 +50,7 @@
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -58,7 +58,7 @@
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -66,7 +66,7 @@
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -74,7 +74,7 @@
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -157,16 +157,12 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##1-_Find_the_greatest_number-_Use_binary_search_or_one-pass,_both_are_fine-_Store_the_index_in_p-"><span class="toc-number">3.</span> <span class="toc-text">#1. Find the greatest number. Use binary search or one-pass, both are fine. Store the index in p.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##2-_Reverse_0_to_p-"><span class="toc-number">4.</span> <span class="toc-text">#2. Reverse 0 to p.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##3-_Reverse_p_+_1_to_end-"><span class="toc-number">5.</span> <span class="toc-text">#3. Reverse p + 1 to end.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##4-_Reverse_0_to_end-"><span class="toc-number">6.</span> <span class="toc-text">#4. Reverse 0 to end.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">7.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a rotated sorted array, recover it to sorted array in-place.<br><a id="more"></a></p>
-<p>##Solution<br>Four steps:</p>
-<p>###1. Find the greatest number. Use binary search or one-pass, both are fine. Store the index in p.</p>
-<p>###2. Reverse 0 to p.</p>
-<p>###3. Reverse p + 1 to end.</p>
-<p>###4. Reverse 0 to end.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">recoverRotatedSortedArray</span><span class="params">(ArrayList&lt;Integer&gt; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.size() &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++) &#123;</span><br><span class="line">            p = i;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; nums.size() - <span class="number">1</span> &amp;&amp; nums.get(i) &gt; nums.get(i + <span class="number">1</span>)) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        inPlaceRotate(nums, <span class="number">0</span>, p);</span><br><span class="line">        inPlaceRotate(nums, p + <span class="number">1</span>, nums.size() - <span class="number">1</span>);</span><br><span class="line">        inPlaceRotate(nums, <span class="number">0</span>, nums.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">inPlaceRotate</span><span class="params">(ArrayList&lt;Integer&gt; nums, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = nums.get(left);</span><br><span class="line">            nums.set(left, nums.get(right));</span><br><span class="line">            nums.set(right, tmp);</span><br><span class="line">            left++;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+                <h2 id="Question">Question</h2><p>Given a rotated sorted array, recover it to sorted array in-place.<br><a id="more"></a></p>
+<h2 id="Solution">Solution</h2><p>Four steps:</p>
+<h2 id="#1-_Find_the_greatest_number-_Use_binary_search_or_one-pass,_both_are_fine-_Store_the_index_in_p-">#1. Find the greatest number. Use binary search or one-pass, both are fine. Store the index in p.</h2><h2 id="#2-_Reverse_0_to_p-">#2. Reverse 0 to p.</h2><h2 id="#3-_Reverse_p_+_1_to_end-">#3. Reverse p + 1 to end.</h2><h2 id="#4-_Reverse_0_to_end-">#4. Reverse 0 to end.</h2><h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">recoverRotatedSortedArray</span><span class="params">(ArrayList&lt;Integer&gt; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.size() &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++) &#123;</span><br><span class="line">            p = i;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; nums.size() - <span class="number">1</span> &amp;&amp; nums.get(i) &gt; nums.get(i + <span class="number">1</span>)) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        inPlaceRotate(nums, <span class="number">0</span>, p);</span><br><span class="line">        inPlaceRotate(nums, p + <span class="number">1</span>, nums.size() - <span class="number">1</span>);</span><br><span class="line">        inPlaceRotate(nums, <span class="number">0</span>, nums.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">inPlaceRotate</span><span class="params">(ArrayList&lt;Integer&gt; nums, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = nums.get(left);</span><br><span class="line">            nums.set(left, nums.get(right));</span><br><span class="line">            nums.set(right, tmp);</span><br><span class="line">            left++;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -174,7 +170,7 @@
               <a href="/2015/03/26/Recover-Rotated-Sorted-Array/" class="article-date">
   <time datetime="2015-03-27T06:24:56.000Z" itemprop="datePublished">2015-03-26</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/03/26/Recover-Rotated-Sorted-Array/" data-id="cihljxz82007gt0yuljg2wsa0" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/03/26/Recover-Rotated-Sorted-Array/" data-id="cihloqmju007g2xyu50vucrry" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sorted-array/">Sorted array</a></li></ul>
@@ -284,13 +280,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

@@ -7,18 +7,18 @@
     <title>[Leetcode] Rotate List | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a list, rotate the list to the right by k places, where k is non-negative.
+    <meta name="description" content="QuestionGiven a list, rotate the list to the right by k places, where k is non-negative.
 For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Rotate List">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/06/01/Rotate-List/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a list, rotate the list to the right by k places, where k is non-negative.
+<meta property="og:description" content="QuestionGiven a list, rotate the list to the right by k places, where k is non-negative.
 For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.">
-<meta property="og:updated_time" content="2015-06-02T06:58:11.000Z">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Rotate List">
-<meta name="twitter:description" content="##QuestionGiven a list, rotate the list to the right by k places, where k is non-negative.
+<meta name="twitter:description" content="QuestionGiven a list, rotate the list to the right by k places, where k is non-negative.
 For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.">
     
     
@@ -53,7 +53,7 @@ For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k =
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -61,7 +61,7 @@ For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k =
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -69,7 +69,7 @@ For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k =
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -77,7 +77,7 @@ For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k =
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -160,14 +160,13 @@ For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k =
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##Two_pointers_method"><span class="toc-number">4.</span> <span class="toc-text">#Two pointers method</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a list, rotate the list to the right by k places, where k is non-negative.</p>
+                <h2 id="Question">Question</h2><p>Given a list, rotate the list to the right by k places, where k is non-negative.</p>
 <p>For example:<br>Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2,<br>return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.<br><a id="more"></a></p>
-<p>##Solution<br>Use two pointers. Remember to use two pointers when needs to deal with the Nth element from tail.</p>
-<p>##Java code</p>
-<p>###Two pointers method<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">rotateRight</span><span class="params">(ListNode head, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode left = head;</span><br><span class="line">        ListNode right = head;</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</span><br><span class="line">            right = right.next;</span><br><span class="line">            len++;</span><br><span class="line">            <span class="keyword">if</span> (right == <span class="keyword">null</span>) &#123;</span><br><span class="line">                right = head;</span><br><span class="line">                i = -<span class="number">1</span>; <span class="comment">// Note that it will be increased by 1 before next loop.</span></span><br><span class="line">                k = k % len; <span class="comment">// Reduce number of loops.</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (right.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            left = left.next;</span><br><span class="line">            right = right.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (left.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ListNode newHead = left.next;</span><br><span class="line">            left.next = <span class="keyword">null</span>;</span><br><span class="line">            right.next = head;</span><br><span class="line">            <span class="keyword">return</span> newHead;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><p>Use two pointers. Remember to use two pointers when needs to deal with the Nth element from tail.</p>
+<h2 id="Java_code">Java code</h2><h2 id="#Two_pointers_method">#Two pointers method</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">rotateRight</span><span class="params">(ListNode head, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode left = head;</span><br><span class="line">        ListNode right = head;</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</span><br><span class="line">            right = right.next;</span><br><span class="line">            len++;</span><br><span class="line">            <span class="keyword">if</span> (right == <span class="keyword">null</span>) &#123;</span><br><span class="line">                right = head;</span><br><span class="line">                i = -<span class="number">1</span>; <span class="comment">// Note that it will be increased by 1 before next loop.</span></span><br><span class="line">                k = k % len; <span class="comment">// Reduce number of loops.</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (right.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            left = left.next;</span><br><span class="line">            right = right.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (left.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ListNode newHead = left.next;</span><br><span class="line">            left.next = <span class="keyword">null</span>;</span><br><span class="line">            right.next = head;</span><br><span class="line">            <span class="keyword">return</span> newHead;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -175,7 +174,7 @@ For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k =
               <a href="/2015/06/01/Rotate-List/" class="article-date">
   <time datetime="2015-06-02T06:30:59.000Z" itemprop="datePublished">2015-06-01</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/06/01/Rotate-List/" data-id="cihljxz6w005nt0yuic48mcjq" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/06/01/Rotate-List/" data-id="cihloqmip005n2xyuuii7i1wt" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linked-list/">Linked list</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Two-pointers/">Two pointers</a></li></ul>
@@ -285,13 +284,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

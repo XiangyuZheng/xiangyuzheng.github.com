@@ -7,19 +7,19 @@
     <title>[Leetcode] Course Schedule II | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionThere are a total of n courses you have to take, labeled from 0 to n - 1.
-Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expresse">
+    <meta name="description" content="QuestionThere are a total of n courses you have to take, labeled from 0 to n - 1.
+Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Course Schedule II">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/06/14/Course-Schedule-II/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionThere are a total of n courses you have to take, labeled from 0 to n - 1.
-Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expresse">
-<meta property="og:updated_time" content="2015-06-15T05:48:11.000Z">
+<meta property="og:description" content="QuestionThere are a total of n courses you have to take, labeled from 0 to n - 1.
+Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Course Schedule II">
-<meta name="twitter:description" content="##QuestionThere are a total of n courses you have to take, labeled from 0 to n - 1.
-Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expresse">
+<meta name="twitter:description" content="QuestionThere are a total of n courses you have to take, labeled from 0 to n - 1.
+Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -53,7 +53,7 @@ Some courses may have prerequisites, for example to take course 0 you have to fi
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -61,7 +61,7 @@ Some courses may have prerequisites, for example to take course 0 you have to fi
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -69,7 +69,7 @@ Some courses may have prerequisites, for example to take course 0 you have to fi
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -77,7 +77,7 @@ Some courses may have prerequisites, for example to take course 0 you have to fi
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -160,18 +160,18 @@ Some courses may have prerequisites, for example to take course 0 you have to fi
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>There are a total of n courses you have to take, labeled from 0 to n - 1.</p>
+                <h2 id="Question">Question</h2><p>There are a total of n courses you have to take, labeled from 0 to n - 1.</p>
 <p>Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed as a pair: [0,1]</p>
 <p>Given the total number of courses and a list of prerequisite pairs, return the ordering of courses you should take to finish all courses.</p>
 <p>There may be multiple correct orders, you just need to return one of them. If it is impossible to finish all courses, return an empty array.</p>
 <p>For example:</p>
 <p>2, [[1,0]]<br>There are a total of 2 courses to take. To take course 1 you should have finished course 0. So the correct course order is [0,1]</p>
 <p>4, [[1,0],[2,0],[3,1],[3,2]]<br>There are a total of 4 courses to take. To take course 3 you should have finished both courses 1 and 2. Both courses 1 and 2 should be taken after you finished course 0. So one correct course order is [0,1,2,3]. Another correct ordering is[0,2,1,3].<br><a id="more"></a></p>
-<p>##Solution<br>Topological sort. Nodes are sorted by visit-ending time.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] findOrder(<span class="keyword">int</span> numCourses, <span class="keyword">int</span>[][] prerequisites) &#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span>[] visited = <span class="keyword">new</span> <span class="keyword">int</span>[numCourses]; <span class="comment">// 0 -&gt; not visited, 1 -&gt; visiting, 2 -&gt; visited.</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numCourses; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (visited[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!dfs(i, prerequisites, visited, res)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>]; </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] finalRes = <span class="keyword">new</span> <span class="keyword">int</span>[numCourses];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numCourses; i++) &#123;</span><br><span class="line">            finalRes[i] = res.get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> finalRes;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span>[][] prerequisites, <span class="keyword">int</span>[] visited, List&lt;Integer&gt; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (visited[index] == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (visited[index] == <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        visited[index] = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// visiting</span></span><br><span class="line">        <span class="keyword">int</span> len = prerequisites.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (prerequisites[i][<span class="number">0</span>] == index) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!dfs(prerequisites[i][<span class="number">1</span>], prerequisites, visited, res)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        visited[index] = <span class="number">2</span>;</span><br><span class="line">        res.add(index);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><p>Topological sort. Nodes are sorted by visit-ending time.</p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] findOrder(<span class="keyword">int</span> numCourses, <span class="keyword">int</span>[][] prerequisites) &#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span>[] visited = <span class="keyword">new</span> <span class="keyword">int</span>[numCourses]; <span class="comment">// 0 -&gt; not visited, 1 -&gt; visiting, 2 -&gt; visited.</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numCourses; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (visited[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!dfs(i, prerequisites, visited, res)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>]; </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] finalRes = <span class="keyword">new</span> <span class="keyword">int</span>[numCourses];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numCourses; i++) &#123;</span><br><span class="line">            finalRes[i] = res.get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> finalRes;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span>[][] prerequisites, <span class="keyword">int</span>[] visited, List&lt;Integer&gt; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (visited[index] == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (visited[index] == <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        visited[index] = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// visiting</span></span><br><span class="line">        <span class="keyword">int</span> len = prerequisites.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (prerequisites[i][<span class="number">0</span>] == index) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!dfs(prerequisites[i][<span class="number">1</span>], prerequisites, visited, res)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        visited[index] = <span class="number">2</span>;</span><br><span class="line">        res.add(index);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -179,7 +179,7 @@ Some courses may have prerequisites, for example to take course 0 you have to fi
               <a href="/2015/06/14/Course-Schedule-II/" class="article-date">
   <time datetime="2015-06-15T05:46:46.000Z" itemprop="datePublished">2015-06-14</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/06/14/Course-Schedule-II/" data-id="cihljxzf100hot0yuh91nr7bp" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/06/14/Course-Schedule-II/" data-id="cihloqmqr00ho2xyuriv4xicn" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFS/">DFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Graph/">Graph</a></li></ul>
@@ -289,13 +289,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

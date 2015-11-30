@@ -7,19 +7,19 @@
     <title>[Leetcode] Distinct Subsequences | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a string S and a string T, count the number of distinct subsequences of T in S.
-A subsequence of a string is a new string which is formed from the original string by deleting some (can">
+    <meta name="description" content="QuestionGiven a string S and a string T, count the number of distinct subsequences of T in S.
+A subsequence of a string is a new string which is formed from the original string by deleting some (can b">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Distinct Subsequences">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/04/18/Distinct-Subsequences/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a string S and a string T, count the number of distinct subsequences of T in S.
-A subsequence of a string is a new string which is formed from the original string by deleting some (can">
-<meta property="og:updated_time" content="2015-04-19T05:44:27.000Z">
+<meta property="og:description" content="QuestionGiven a string S and a string T, count the number of distinct subsequences of T in S.
+A subsequence of a string is a new string which is formed from the original string by deleting some (can b">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Distinct Subsequences">
-<meta name="twitter:description" content="##QuestionGiven a string S and a string T, count the number of distinct subsequences of T in S.
-A subsequence of a string is a new string which is formed from the original string by deleting some (can">
+<meta name="twitter:description" content="QuestionGiven a string S and a string T, count the number of distinct subsequences of T in S.
+A subsequence of a string is a new string which is formed from the original string by deleting some (can b">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -53,7 +53,7 @@ A subsequence of a string is a new string which is formed from the original stri
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -61,7 +61,7 @@ A subsequence of a string is a new string which is formed from the original stri
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -69,7 +69,7 @@ A subsequence of a string is a new string which is formed from the original stri
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -77,7 +77,7 @@ A subsequence of a string is a new string which is formed from the original stri
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -160,15 +160,15 @@ A subsequence of a string is a new string which is formed from the original stri
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a string S and a string T, count the number of distinct subsequences of T in S.</p>
+                <h2 id="Question">Question</h2><p>Given a string S and a string T, count the number of distinct subsequences of T in S.</p>
 <p>A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, “ACE” is a subsequence of “ABCDE” while “AEC” is not).</p>
 <p>Here is an example:<br>S = “rabbbit”, T = “rabbit”</p>
 <p>Return 3.<br><a id="more"></a></p>
-<p>##Solution<br>When you see string problem that is about subsequence or matching, dynamic programming method should come to your mind naturally. The key is to find the changing condition.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numDistinct</span><span class="params">(String S, String T)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = S.length();</span><br><span class="line">        <span class="keyword">int</span> n = T.length();</span><br><span class="line">        <span class="keyword">if</span> (m == <span class="number">0</span> || n == <span class="number">0</span> || S.length() &lt; T.length()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[][] num = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">1</span>][n + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= m; i++) &#123;</span><br><span class="line">            num[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (S.charAt(i - <span class="number">1</span>) == T.charAt(j - <span class="number">1</span>)) &#123;</span><br><span class="line">                    num[i][j] = num[i - <span class="number">1</span>][j - <span class="number">1</span>] + num[i - <span class="number">1</span>][j];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    num[i][j] = num[i - <span class="number">1</span>][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><p>When you see string problem that is about subsequence or matching, dynamic programming method should come to your mind naturally. The key is to find the changing condition.</p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numDistinct</span><span class="params">(String S, String T)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = S.length();</span><br><span class="line">        <span class="keyword">int</span> n = T.length();</span><br><span class="line">        <span class="keyword">if</span> (m == <span class="number">0</span> || n == <span class="number">0</span> || S.length() &lt; T.length()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[][] num = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">1</span>][n + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= m; i++) &#123;</span><br><span class="line">            num[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (S.charAt(i - <span class="number">1</span>) == T.charAt(j - <span class="number">1</span>)) &#123;</span><br><span class="line">                    num[i][j] = num[i - <span class="number">1</span>][j - <span class="number">1</span>] + num[i - <span class="number">1</span>][j];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    num[i][j] = num[i - <span class="number">1</span>][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -176,7 +176,7 @@ A subsequence of a string is a new string which is formed from the original stri
               <a href="/2015/04/18/Distinct-Subsequences/" class="article-date">
   <time datetime="2015-04-19T05:42:57.000Z" itemprop="datePublished">2015-04-18</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/04/18/Distinct-Subsequences/" data-id="cihljxzes00hat0yuy47y4rsc" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/04/18/Distinct-Subsequences/" data-id="cihloqmqi00ha2xyucuej05b7" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DP/">DP</a></li></ul>
@@ -286,13 +286,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

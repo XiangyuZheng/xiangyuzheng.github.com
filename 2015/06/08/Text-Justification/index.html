@@ -7,19 +7,19 @@
     <title>[Leetcode] Text Justification | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven an array of words and a length L, format the text such that each line has exactly L characters and is fully (left and right) justified.
-You should pack your words in a greedy approach;">
+    <meta name="description" content="QuestionGiven an array of words and a length L, format the text such that each line has exactly L characters and is fully (left and right) justified.
+You should pack your words in a greedy approach; t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Text Justification">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/06/08/Text-Justification/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven an array of words and a length L, format the text such that each line has exactly L characters and is fully (left and right) justified.
-You should pack your words in a greedy approach;">
-<meta property="og:updated_time" content="2015-06-09T05:16:47.000Z">
+<meta property="og:description" content="QuestionGiven an array of words and a length L, format the text such that each line has exactly L characters and is fully (left and right) justified.
+You should pack your words in a greedy approach; t">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Text Justification">
-<meta name="twitter:description" content="##QuestionGiven an array of words and a length L, format the text such that each line has exactly L characters and is fully (left and right) justified.
-You should pack your words in a greedy approach;">
+<meta name="twitter:description" content="QuestionGiven an array of words and a length L, format the text such that each line has exactly L characters and is fully (left and right) justified.
+You should pack your words in a greedy approach; t">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -53,7 +53,7 @@ You should pack your words in a greedy approach;">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -61,7 +61,7 @@ You should pack your words in a greedy approach;">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -69,7 +69,7 @@ You should pack your words in a greedy approach;">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -77,7 +77,7 @@ You should pack your words in a greedy approach;">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -160,10 +160,10 @@ You should pack your words in a greedy approach;">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given an array of words and a length L, format the text such that each line has exactly L characters and is fully (left and right) justified.</p>
+                <h2 id="Question">Question</h2><p>Given an array of words and a length L, format the text such that each line has exactly L characters and is fully (left and right) justified.</p>
 <p>You should pack your words in a greedy approach; that is, pack as many words as you can in each line. Pad extra spaces ‘ ‘ when necessary so that each line has exactly L characters.</p>
 <p>Extra spaces between words should be distributed as evenly as possible. If the number of spaces on a line do not divide evenly between words, the empty slots on the left will be assigned more spaces than the slots on the right.</p>
 <p>For the last line of text, it should be left justified and no extra space is inserted between words.</p>
@@ -171,7 +171,7 @@ You should pack your words in a greedy approach;">
 <p>Return the formatted lines as:<br>[<br>   “This    is    an”,<br>   “example  of text”,<br>   “justification.  “<br>]<br>Note: Each word is guaranteed not to exceed L in length.</p>
 <p>click to show corner cases.</p>
 <p>Corner Cases:<br>A line other than the last line might contain only one word. What should you do in this case?<br>In this case, that line should be left-justified.<br><a id="more"></a></p>
-<p>##Solution<br>It’s a hard question, with complicated logic.</p>
+<h2 id="Solution">Solution</h2><p>It’s a hard question, with complicated logic.</p>
 <p>Steps:</p>
 <ol>
 <li>Check lengthNeeded for sub array (left, right).</li>
@@ -179,7 +179,7 @@ You should pack your words in a greedy approach;">
 <li>Generate string for this line, be care to deal with the last line.</li>
 <li>Add all lines to a list and return.</li>
 </ol>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">fullJustify</span><span class="params">(String[] words, <span class="keyword">int</span> maxWidth)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        <span class="keyword">int</span> len = words.length;</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> lengthNeeded = words[<span class="number">0</span>].length();</span><br><span class="line">        <span class="keyword">while</span> (right &lt; len) &#123;</span><br><span class="line">            <span class="keyword">if</span> (words[right].length() + lengthNeeded + <span class="number">1</span> &lt;= maxWidth) &#123;</span><br><span class="line">                lengthNeeded += words[right].length() + <span class="number">1</span>;</span><br><span class="line">                right++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                res.add(generateLine(left, right - <span class="number">1</span>, lengthNeeded, maxWidth, words, <span class="keyword">false</span>));</span><br><span class="line">                left = right;</span><br><span class="line">                right++;</span><br><span class="line">                lengthNeeded = words[left].length();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        String lastLine = generateLine(left, right - <span class="number">1</span>, lengthNeeded, maxWidth, words, <span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">if</span> (lastLine != <span class="keyword">null</span>) &#123;</span><br><span class="line">            res.add(lastLine);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">generateLine</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span> lengthNeeded, <span class="keyword">int</span> maxWidth, String[] words, <span class="keyword">boolean</span> isLast)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (left &gt; right) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> spaces = maxWidth - (lengthNeeded - (right - left));</span><br><span class="line">        <span class="keyword">int</span> spaceBetween = (left == right) ? <span class="number">0</span> : (spaces / (right - left));</span><br><span class="line">        <span class="keyword">if</span> (isLast) &#123;</span><br><span class="line">            spaceBetween = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> remainSpace = spaces - (spaceBetween * (right - left));</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        sb.append(words[left]);</span><br><span class="line">        left++;</span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        	<span class="keyword">if</span> (remainSpace &gt; <span class="number">0</span> &amp;&amp; !isLast) &#123;</span><br><span class="line">        		appendSpace(sb, <span class="number">1</span>);</span><br><span class="line">        		remainSpace--;</span><br><span class="line">        	&#125;</span><br><span class="line">            appendSpace(sb, spaceBetween);</span><br><span class="line">            sb.append(words[left]);</span><br><span class="line">            left++;</span><br><span class="line">        &#125;</span><br><span class="line">        appendSpace(sb, remainSpace);</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">appendSpace</span><span class="params">(StringBuilder sb, <span class="keyword">int</span> space)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; space; i++) &#123;</span><br><span class="line">            sb.append(<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">fullJustify</span><span class="params">(String[] words, <span class="keyword">int</span> maxWidth)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        <span class="keyword">int</span> len = words.length;</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> lengthNeeded = words[<span class="number">0</span>].length();</span><br><span class="line">        <span class="keyword">while</span> (right &lt; len) &#123;</span><br><span class="line">            <span class="keyword">if</span> (words[right].length() + lengthNeeded + <span class="number">1</span> &lt;= maxWidth) &#123;</span><br><span class="line">                lengthNeeded += words[right].length() + <span class="number">1</span>;</span><br><span class="line">                right++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                res.add(generateLine(left, right - <span class="number">1</span>, lengthNeeded, maxWidth, words, <span class="keyword">false</span>));</span><br><span class="line">                left = right;</span><br><span class="line">                right++;</span><br><span class="line">                lengthNeeded = words[left].length();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        String lastLine = generateLine(left, right - <span class="number">1</span>, lengthNeeded, maxWidth, words, <span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">if</span> (lastLine != <span class="keyword">null</span>) &#123;</span><br><span class="line">            res.add(lastLine);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">generateLine</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span> lengthNeeded, <span class="keyword">int</span> maxWidth, String[] words, <span class="keyword">boolean</span> isLast)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (left &gt; right) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> spaces = maxWidth - (lengthNeeded - (right - left));</span><br><span class="line">        <span class="keyword">int</span> spaceBetween = (left == right) ? <span class="number">0</span> : (spaces / (right - left));</span><br><span class="line">        <span class="keyword">if</span> (isLast) &#123;</span><br><span class="line">            spaceBetween = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> remainSpace = spaces - (spaceBetween * (right - left));</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        sb.append(words[left]);</span><br><span class="line">        left++;</span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        	<span class="keyword">if</span> (remainSpace &gt; <span class="number">0</span> &amp;&amp; !isLast) &#123;</span><br><span class="line">        		appendSpace(sb, <span class="number">1</span>);</span><br><span class="line">        		remainSpace--;</span><br><span class="line">        	&#125;</span><br><span class="line">            appendSpace(sb, spaceBetween);</span><br><span class="line">            sb.append(words[left]);</span><br><span class="line">            left++;</span><br><span class="line">        &#125;</span><br><span class="line">        appendSpace(sb, remainSpace);</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">appendSpace</span><span class="params">(StringBuilder sb, <span class="keyword">int</span> space)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; space; i++) &#123;</span><br><span class="line">            sb.append(<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -187,7 +187,7 @@ You should pack your words in a greedy approach;">
               <a href="/2015/06/08/Text-Justification/" class="article-date">
   <time datetime="2015-06-09T05:03:17.000Z" itemprop="datePublished">2015-06-08</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/06/08/Text-Justification/" data-id="cihljxz4k002nt0yu9bkeftwn" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/06/08/Text-Justification/" data-id="cihloqmgk002n2xyugynkcomv" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li></ul>
@@ -297,13 +297,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

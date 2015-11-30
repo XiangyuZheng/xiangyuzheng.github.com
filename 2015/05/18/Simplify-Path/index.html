@@ -7,22 +7,22 @@
     <title>[Leetcode] Simplify Path | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven an absolute path for a file (Unix-style), simplify it.
+    <meta name="description" content="QuestionGiven an absolute path for a file (Unix-style), simplify it.
 For example,path = “/home/“, =&amp;gt; “/home”path = “/a/./b/../../c/“, =&amp;gt; “/c”
-Corner Cases:Did you consider the case where path">
+Corner Cases:Did you consider the case where path =">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Simplify Path">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/05/18/Simplify-Path/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven an absolute path for a file (Unix-style), simplify it.
+<meta property="og:description" content="QuestionGiven an absolute path for a file (Unix-style), simplify it.
 For example,path = “/home/“, =&amp;gt; “/home”path = “/a/./b/../../c/“, =&amp;gt; “/c”
-Corner Cases:Did you consider the case where path">
-<meta property="og:updated_time" content="2015-05-19T07:01:03.000Z">
+Corner Cases:Did you consider the case where path =">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Simplify Path">
-<meta name="twitter:description" content="##QuestionGiven an absolute path for a file (Unix-style), simplify it.
+<meta name="twitter:description" content="QuestionGiven an absolute path for a file (Unix-style), simplify it.
 For example,path = “/home/“, =&amp;gt; “/home”path = “/a/./b/../../c/“, =&amp;gt; “/c”
-Corner Cases:Did you consider the case where path">
+Corner Cases:Did you consider the case where path =">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -56,7 +56,7 @@ Corner Cases:Did you consider the case where path">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -64,7 +64,7 @@ Corner Cases:Did you consider the case where path">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -72,7 +72,7 @@ Corner Cases:Did you consider the case where path">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -80,7 +80,7 @@ Corner Cases:Did you consider the case where path">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -163,14 +163,14 @@ Corner Cases:Did you consider the case where path">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given an absolute path for a file (Unix-style), simplify it.</p>
+                <h2 id="Question">Question</h2><p>Given an absolute path for a file (Unix-style), simplify it.</p>
 <p>For example,<br>path = “/home/“, =&gt; “/home”<br>path = “/a/./b/../../c/“, =&gt; “/c”</p>
 <p><strong>Corner Cases:</strong><br>Did you consider the case where path = “/../“?<br>In this case, you should return “/“.<br>Another corner case is the path might contain multiple slashes ‘/‘ together, such as “/home//foo/“.<br>In this case, you should ignore redundant slashes and return “/home/foo”.<br><a id="more"></a></p>
-<p>##Solution<br>Use a stack to store paths, skip “.” and pop() when get a “..”.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">simplifyPath</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">        String[] paths = path.split(<span class="string">"/"</span>);</span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (String str : paths) &#123;</span><br><span class="line">            <span class="keyword">if</span> (str.equals(<span class="string">""</span>) || str.equals(<span class="string">"/"</span>) || str.equals(<span class="string">"."</span>)) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (str.equals(<span class="string">".."</span>)) &#123;</span><br><span class="line">                <span class="keyword">if</span> (list.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    list.remove(list.size() - <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                list.add(str);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (String str : list) &#123;</span><br><span class="line">            sb.append(<span class="string">"/"</span>).append(str);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (sb.length() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"/"</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> sb.toString();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><p>Use a stack to store paths, skip “.” and pop() when get a “..”.</p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">simplifyPath</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">        String[] paths = path.split(<span class="string">"/"</span>);</span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (String str : paths) &#123;</span><br><span class="line">            <span class="keyword">if</span> (str.equals(<span class="string">""</span>) || str.equals(<span class="string">"/"</span>) || str.equals(<span class="string">"."</span>)) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (str.equals(<span class="string">".."</span>)) &#123;</span><br><span class="line">                <span class="keyword">if</span> (list.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    list.remove(list.size() - <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                list.add(str);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (String str : list) &#123;</span><br><span class="line">            sb.append(<span class="string">"/"</span>).append(str);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (sb.length() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"/"</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> sb.toString();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -178,7 +178,7 @@ Corner Cases:Did you consider the case where path">
               <a href="/2015/05/18/Simplify-Path/" class="article-date">
   <time datetime="2015-05-19T06:58:49.000Z" itemprop="datePublished">2015-05-18</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/05/18/Simplify-Path/" data-id="cihljxz66004lt0yu54v7yhbj" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/05/18/Simplify-Path/" data-id="cihloqmhz004l2xyupl6ac4b2" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stack/">Stack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li></ul>
@@ -288,13 +288,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

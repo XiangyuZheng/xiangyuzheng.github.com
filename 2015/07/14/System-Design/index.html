@@ -19,7 +19,7 @@ Concurrency. Do you understand threads, deadlock, and starvation? Do you know ho
 Topics:
 
 Concurrency. Do you understand threads, deadlock, and starvation? Do you know how to parallelize algorithms? Do you understand consistency">
-<meta property="og:updated_time" content="2015-07-19T04:32:49.000Z">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="System Design">
 <meta name="twitter:description" content="About System DesignIt’s an open-ended conversation.
@@ -59,7 +59,7 @@ Concurrency. Do you understand threads, deadlock, and starvation? Do you know ho
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -67,7 +67,7 @@ Concurrency. Do you understand threads, deadlock, and starvation? Do you know ho
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -75,7 +75,7 @@ Concurrency. Do you understand threads, deadlock, and starvation? Do you know ho
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -83,7 +83,7 @@ Concurrency. Do you understand threads, deadlock, and starvation? Do you know ho
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -166,7 +166,7 @@ Concurrency. Do you understand threads, deadlock, and starvation? Do you know ho
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#About_System_Design"><span class="toc-number">1.</span> <span class="toc-text">About System Design</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#About_System_Design"><span class="toc-number">1.</span> <span class="toc-text">About System Design</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Design_a_random_ID_generation_system"><span class="toc-number">2.</span> <span class="toc-text">Design a random ID generation system</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Design_the_Facebook_news_feed_function"><span class="toc-number">3.</span> <span class="toc-text">Design the Facebook news feed function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##Database_table"><span class="toc-number">4.</span> <span class="toc-text">#Database table</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##Push_model"><span class="toc-number">5.</span> <span class="toc-text">#Push model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##Pull_model"><span class="toc-number">6.</span> <span class="toc-text">#Pull model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##Hybrid"><span class="toc-number">7.</span> <span class="toc-text">#Hybrid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Design_a_function_to_return_top-k_elements_in_real-time"><span class="toc-number">8.</span> <span class="toc-text">Design a function to return top-k elements in real-time</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shorten_Url"><span class="toc-number">9.</span> <span class="toc-text">Shorten Url</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##On_single_machine:"><span class="toc-number">10.</span> <span class="toc-text">#On single machine:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##On_multiple_machines:"><span class="toc-number">11.</span> <span class="toc-text">#On multiple machines:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How_to_design_instagram"><span class="toc-number">12.</span> <span class="toc-text">How to design instagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Design_a_web_crawler"><span class="toc-number">13.</span> <span class="toc-text">Design a web crawler</span></a></li></ol>
               </div>
               
                 <a id="more"></a>
@@ -181,14 +181,13 @@ Concurrency. Do you understand threads, deadlock, and starvation? Do you know ho
 <li>Availability and Reliability. Are you thinking about how things can fail, especially in a distributed environment? Do know how to design a system to cope with network failures? Do you understand durability?</li>
 </ol>
 <p>You are not expected to give a perfect answer, there is no right answers. The process of how you solve the problem is more important.</p>
-<p>##Design a random ID generation system<br><a href="https://blog.twitter.com/2010/announcing-snowflake" target="_blank" rel="external">Snowflake</a></p>
+<h2 id="Design_a_random_ID_generation_system">Design a random ID generation system</h2><p><a href="https://blog.twitter.com/2010/announcing-snowflake" target="_blank" rel="external">Snowflake</a></p>
 <p>To generate the roughly-sorted 64 bit ids in an uncoordinated manner, we settled on a composition of: timestamp, worker number and sequence number.</p>
 <p>Sequence numbers are per-thread and worker numbers are chosen at startup via zookeeper (though that’s overridable via a config file).</p>
-<p>##Design the Facebook news feed function<br><a href="http://www.quora.com/Software-Engineering-Best-Practices/What-are-the-best-practices-for-building-something-like-a-News-Feed" target="_blank" rel="external">What are the best practices for building something like a News Feed?</a><br><a href="http://www.quora.com/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed" target="_blank" rel="external">What are the scaling issues to keep in mind while developing a social network feed?</a></p>
+<h2 id="Design_the_Facebook_news_feed_function">Design the Facebook news feed function</h2><p><a href="http://www.quora.com/Software-Engineering-Best-Practices/What-are-the-best-practices-for-building-something-like-a-News-Feed" target="_blank" rel="external">What are the best practices for building something like a News Feed?</a><br><a href="http://www.quora.com/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed" target="_blank" rel="external">What are the scaling issues to keep in mind while developing a social network feed?</a></p>
 <p>Users in most social networking sites are describable in terms of a social graph. The relationships between users are represented by <strong>adjacency lists</strong>. A connection is an edge in the graph.</p>
 <p>Usually, we want to rank edges for one person.</p>
-<p>###Database table</p>
-<ol>
+<h2 id="#Database_table">#Database table</h2><ol>
 <li><p>User<br>id<br> name<br> age<br> …<br> all_followers<br> news_feed_content</p>
 </li>
 <li><p>Activity<br>id<br> user_id<br> source_id<br> type (photo, comment, post)</p>
@@ -197,12 +196,12 @@ Concurrency. Do you understand threads, deadlock, and starvation? Do you know ho
 <ol>
 <li>Follow<br>id<br> user_id<br> follower_id</li>
 </ol>
-<p>###Push model<br>When someone published a post, push the activity id to all its followers.<br>When read news feed, a user just need to get all content from news_feed_content.</p>
+<h2 id="#Push_model">#Push model</h2><p>When someone published a post, push the activity id to all its followers.<br>When read news feed, a user just need to get all content from news_feed_content.</p>
 <p>drawbacks: For celebrities, there are too many to push, it needs many disk seeks, and write back-logs (write post ids).</p>
-<p>###Pull model<br>Stores all recent activities in memory, in this way, we avoid all disk seeks.<br>Do nothing when publish a post.<br>When read news feed, we pull all the activities from recent activities in memory (Redis or Memcached)</p>
+<h2 id="#Pull_model">#Pull model</h2><p>Stores all recent activities in memory, in this way, we avoid all disk seeks.<br>Do nothing when publish a post.<br>When read news feed, we pull all the activities from recent activities in memory (Redis or Memcached)</p>
 <p>drawbacks: when fails, it generate nothing to news feed. We may need a mechanism to approximates the user’s feed, e.g. just generate a subset of your friends.</p>
-<p>###Hybrid<br>For celebrities, use Pull.<br>For normal users, use Push.</p>
-<p>##Design a function to return top-k elements in real-time<br><a href="https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf" target="_blank" rel="external">Efficient Computation of Frequent and Top-k Elements in Data Streams</a><br><a href="http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf" target="_blank" rel="external">An Optimal Strategy for Monitoring Top-k Queries in Streaming Windows</a></p>
+<h2 id="#Hybrid">#Hybrid</h2><p>For celebrities, use Pull.<br>For normal users, use Push.</p>
+<h2 id="Design_a_function_to_return_top-k_elements_in_real-time">Design a function to return top-k elements in real-time</h2><p><a href="https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf" target="_blank" rel="external">Efficient Computation of Frequent and Top-k Elements in Data Streams</a><br><a href="http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf" target="_blank" rel="external">An Optimal Strategy for Monitoring Top-k Queries in Streaming Windows</a></p>
 <p><a href="http://stackoverflow.com/questions/21692624/design-a-system-to-keep-top-k-frequent-words-real-time" target="_blank" rel="external">Design a system to keep top k frequent words real time</a> Nice!</p>
 <p>Use a doubly linked list to store the frequency, each frequency points to a list of words that have the frequency.</p>
 <p>Count list      word lists (each node points back to the count node)</p>
@@ -218,10 +217,10 @@ Concurrency. Do you understand threads, deadlock, and starvation? Do you know ho
 <li>We can drop the words that are still unique after several minutes.<br>We can drop the words with the min frequency if the count list is too large.</li>
 <li>Run the algorithm in several machines, hash words to different machines. Merge top-k elements from each machine to get the final top-k.</li>
 </ol>
-<p>##Shorten Url<br><a href="http://n00tc0d3r.blogspot.com" target="_blank" rel="external">System Design for Big Data-tinyurl</a></p>
-<p>###On single machine:<br>DB table:<br>    id<br>    long url<br>    short url</p>
+<h2 id="Shorten_Url">Shorten Url</h2><p><a href="http://n00tc0d3r.blogspot.com" target="_blank" rel="external">System Design for Big Data-tinyurl</a></p>
+<h2 id="#On_single_machine:">#On single machine:</h2><p>DB table:<br>    id<br>    long url<br>    short url</p>
 <p>For every long url, we firstly insert it into the table, get its id. We then map the id into a 62-base numeric. [0-9a-zA-Z].<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">shorturl</span><span class="params">(<span class="keyword">int</span> id, <span class="keyword">int</span> base, HashMap map)</span> </span>&#123;</span><br><span class="line">  StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">  <span class="keyword">while</span> (id &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">int</span> digit = id % base;</span><br><span class="line">    res.append(map.get(digit));</span><br><span class="line">    id /= base;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (res.length() &lt; <span class="number">6</span>)  res.append(<span class="string">'0'</span>);</span><br><span class="line">  <span class="keyword">return</span> res.reverse().toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>###On multiple machines:<br>We can use a distributed database to store the urls, and the DB can generate id for us.<br>Or we can do it ourselves.</p>
+<h2 id="#On_multiple_machines:">#On multiple machines:</h2><p>We can use a distributed database to store the urls, and the DB can generate id for us.<br>Or we can do it ourselves.</p>
 <p>The basic process can be:<br><strong>Insert</strong></p>
 <ol>
 <li>Hash an input long url into a single integer;</li>
@@ -233,16 +232,15 @@ Concurrency. Do you understand threads, deadlock, and starvation? Do you know ho
 <li>Convert the shorten url back to the key using base conversion (from 62-base to 10-base);</li>
 <li>Locate the server containing that key and return the longUrl.</li>
 </ol>
-<p>##How to design instagram<br><a href="http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances" target="_blank" rel="external">What Powers Instagram: Hundreds of Instances, Dozens of Technologies</a><br><a href="http://www.scribd.com/doc/89025069/Mike-Krieger-Instagram-at-the-Airbnb-tech-talk-on-Scaling-Instagram" target="_blank" rel="external">Scaling Instagram</a></p>
-<p>##Design a web crawler</p>
-
+<h2 id="How_to_design_instagram">How to design instagram</h2><p><a href="http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances" target="_blank" rel="external">What Powers Instagram: Hundreds of Instances, Dozens of Technologies</a><br><a href="http://www.scribd.com/doc/89025069/Mike-Krieger-Instagram-at-the-Airbnb-tech-talk-on-Scaling-Instagram" target="_blank" rel="external">Scaling Instagram</a></p>
+<h2 id="Design_a_web_crawler">Design a web crawler</h2>
               
             </div>
             <footer class="article-footer">
               <a href="/2015/07/14/System-Design/" class="article-date">
   <time datetime="2015-07-15T05:19:23.000Z" itemprop="datePublished">2015-07-14</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/07/14/System-Design/" data-id="cihljxz4m002qt0yu6f6b8ux1" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/07/14/System-Design/" data-id="cihloqmgn002q2xyu7niwz42g" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/System-Design/">System Design</a></li></ul>
@@ -253,7 +251,7 @@ Concurrency. Do you understand threads, deadlock, and starvation? Do you know ho
         
 <nav id="article-nav">
   
-    <a href="/2015/11/29/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/11/30/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -352,13 +350,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

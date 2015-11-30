@@ -7,7 +7,7 @@
     <title>[Leetcode] Excel Sheet Column Title | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a positive integer, return its corresponding column title as appear in an Excel sheet.
+    <meta name="description" content="QuestionGiven a positive integer, return its corresponding column title as appear in an Excel sheet.
 For example:
 1 -&amp;gt; A
 2 -&amp;gt; B
@@ -20,7 +20,7 @@ For example:
 <meta property="og:title" content="[Leetcode] Excel Sheet Column Title">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/06/12/Excel-Sheet-Column-Title/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a positive integer, return its corresponding column title as appear in an Excel sheet.
+<meta property="og:description" content="QuestionGiven a positive integer, return its corresponding column title as appear in an Excel sheet.
 For example:
 1 -&amp;gt; A
 2 -&amp;gt; B
@@ -29,10 +29,10 @@ For example:
 26 -&amp;gt; Z
 27 -&amp;gt; AA
 28 -&amp;gt; AB">
-<meta property="og:updated_time" content="2015-06-13T05:18:00.000Z">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Excel Sheet Column Title">
-<meta name="twitter:description" content="##QuestionGiven a positive integer, return its corresponding column title as appear in an Excel sheet.
+<meta name="twitter:description" content="QuestionGiven a positive integer, return its corresponding column title as appear in an Excel sheet.
 For example:
 1 -&amp;gt; A
 2 -&amp;gt; B
@@ -74,7 +74,7 @@ For example:
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -82,7 +82,7 @@ For example:
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -90,7 +90,7 @@ For example:
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -98,7 +98,7 @@ For example:
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -181,10 +181,10 @@ For example:
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
+                <h2 id="Question">Question</h2><p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
 <p>For example:</p>
 <pre><code><span class="number">1</span> <span class="subst">-&gt; </span>A
 <span class="number">2</span> <span class="subst">-&gt; </span>B
@@ -194,8 +194,8 @@ For example:
 <span class="number">27</span> <span class="subst">-&gt; </span>AA
 <span class="number">28</span> <span class="subst">-&gt; </span>AB 
 </code></pre><a id="more"></a>
-<p>##Solution<br>This convertion is wired. It’s a module-26 number. As 1 is “A” and 27 is “AA”, there is no 0. In fact, A is 0 here, so every time we need to decrease n by 1 to make it start from 0.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"A"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (n != <span class="number">0</span>) &#123;</span><br><span class="line">            n--;</span><br><span class="line">            <span class="keyword">char</span> ch = (<span class="keyword">char</span>)(<span class="string">'A'</span> + (n % <span class="number">26</span>));</span><br><span class="line">            sb.insert(<span class="number">0</span>, ch);</span><br><span class="line">            n = n / <span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><p>This convertion is wired. It’s a module-26 number. As 1 is “A” and 27 is “AA”, there is no 0. In fact, A is 0 here, so every time we need to decrease n by 1 to make it start from 0.</p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"A"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (n != <span class="number">0</span>) &#123;</span><br><span class="line">            n--;</span><br><span class="line">            <span class="keyword">char</span> ch = (<span class="keyword">char</span>)(<span class="string">'A'</span> + (n % <span class="number">26</span>));</span><br><span class="line">            sb.insert(<span class="number">0</span>, ch);</span><br><span class="line">            n = n / <span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -203,7 +203,7 @@ For example:
               <a href="/2015/06/12/Excel-Sheet-Column-Title/" class="article-date">
   <time datetime="2015-06-13T05:14:12.000Z" itemprop="datePublished">2015-06-12</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/06/12/Excel-Sheet-Column-Title/" data-id="cihljxzee00gmt0yuuwtdj9nm" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/06/12/Excel-Sheet-Column-Title/" data-id="cihloqmq400gm2xyu63ullzbo" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li></ul>
@@ -313,13 +313,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

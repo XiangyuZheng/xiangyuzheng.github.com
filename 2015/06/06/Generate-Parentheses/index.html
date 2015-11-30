@@ -7,22 +7,22 @@
     <title>[Leetcode] Generate Parentheses | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+    <meta name="description" content="QuestionGiven n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 For example, given n = 3, a solution set is:
-“((()))”, “(()())”, “(())()”, “()(())”, “">
+“((()))”, “(()())”, “(())()”, “()(())”, “()">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Generate Parentheses">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/06/06/Generate-Parentheses/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+<meta property="og:description" content="QuestionGiven n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 For example, given n = 3, a solution set is:
-“((()))”, “(()())”, “(())()”, “()(())”, “">
-<meta property="og:updated_time" content="2015-06-07T06:05:06.000Z">
+“((()))”, “(()())”, “(())()”, “()(())”, “()">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Generate Parentheses">
-<meta name="twitter:description" content="##QuestionGiven n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+<meta name="twitter:description" content="QuestionGiven n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 For example, given n = 3, a solution set is:
-“((()))”, “(()())”, “(())()”, “()(())”, “">
+“((()))”, “(()())”, “(())()”, “()(())”, “()">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -56,7 +56,7 @@ For example, given n = 3, a solution set is:
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -64,7 +64,7 @@ For example, given n = 3, a solution set is:
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -72,7 +72,7 @@ For example, given n = 3, a solution set is:
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -80,7 +80,7 @@ For example, given n = 3, a solution set is:
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -163,14 +163,14 @@ For example, given n = 3, a solution set is:
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</p>
+                <h2 id="Question">Question</h2><p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</p>
 <p>For example, given n = 3, a solution set is:</p>
 <p>“((()))”, “(()())”, “(())()”, “()(())”, “()()()”<br><a id="more"></a></p>
-<p>##Solution<br>It’s an easy backtracking question.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">generateParenthesis</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        helper(res, <span class="string">""</span>, <span class="number">0</span>, <span class="number">0</span>, n);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(List&lt;String&gt; res, String item, <span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (left == n &amp;&amp; right == n) &#123;</span><br><span class="line">            res.add(item);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (left &lt; n) &#123;</span><br><span class="line">            helper(res, item + <span class="string">"("</span>, left + <span class="number">1</span>, right, n);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (right &lt; left) &#123;</span><br><span class="line">            helper(res, item + <span class="string">")"</span>, left, right + <span class="number">1</span>, n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><p>It’s an easy backtracking question.</p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">generateParenthesis</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        helper(res, <span class="string">""</span>, <span class="number">0</span>, <span class="number">0</span>, n);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(List&lt;String&gt; res, String item, <span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (left == n &amp;&amp; right == n) &#123;</span><br><span class="line">            res.add(item);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (left &lt; n) &#123;</span><br><span class="line">            helper(res, item + <span class="string">"("</span>, left + <span class="number">1</span>, right, n);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (right &lt; left) &#123;</span><br><span class="line">            helper(res, item + <span class="string">")"</span>, left, right + <span class="number">1</span>, n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -178,7 +178,7 @@ For example, given n = 3, a solution set is:
               <a href="/2015/06/06/Generate-Parentheses/" class="article-date">
   <time datetime="2015-06-07T06:03:59.000Z" itemprop="datePublished">2015-06-06</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/06/06/Generate-Parentheses/" data-id="cihljxze300fzt0yu0degav5f" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/06/06/Generate-Parentheses/" data-id="cihloqmpt00fz2xyujg0bgvqy" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Backtracking/">Backtracking</a></li></ul>
@@ -288,13 +288,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

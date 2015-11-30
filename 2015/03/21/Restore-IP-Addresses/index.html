@@ -7,22 +7,22 @@
     <title>[Leetcode] Restore IP Addresses | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a string containing only digits, restore it by returning all possible valid IP address combinations.
+    <meta name="description" content="QuestionGiven a string containing only digits, restore it by returning all possible valid IP address combinations.
 For example:Given “25525511135”,
-return [“255.255.11.135”, “255.255.111.35”]. (Orde">
+return [“255.255.11.135”, “255.255.111.35”]. (Order">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Restore IP Addresses">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/03/21/Restore-IP-Addresses/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a string containing only digits, restore it by returning all possible valid IP address combinations.
+<meta property="og:description" content="QuestionGiven a string containing only digits, restore it by returning all possible valid IP address combinations.
 For example:Given “25525511135”,
-return [“255.255.11.135”, “255.255.111.35”]. (Orde">
-<meta property="og:updated_time" content="2015-03-22T06:05:45.000Z">
+return [“255.255.11.135”, “255.255.111.35”]. (Order">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Restore IP Addresses">
-<meta name="twitter:description" content="##QuestionGiven a string containing only digits, restore it by returning all possible valid IP address combinations.
+<meta name="twitter:description" content="QuestionGiven a string containing only digits, restore it by returning all possible valid IP address combinations.
 For example:Given “25525511135”,
-return [“255.255.11.135”, “255.255.111.35”]. (Orde">
+return [“255.255.11.135”, “255.255.111.35”]. (Order">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -56,7 +56,7 @@ return [“255.255.11.135”, “255.255.111.35”]. (Orde">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -64,7 +64,7 @@ return [“255.255.11.135”, “255.255.111.35”]. (Orde">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -72,7 +72,7 @@ return [“255.255.11.135”, “255.255.111.35”]. (Orde">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -80,7 +80,7 @@ return [“255.255.11.135”, “255.255.111.35”]. (Orde">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -163,17 +163,14 @@ return [“255.255.11.135”, “255.255.111.35”]. (Orde">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##Use_backtracking_template"><span class="toc-number">3.</span> <span class="toc-text">#Use backtracking template</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##validate_the_numbers-"><span class="toc-number">4.</span> <span class="toc-text">#validate the numbers.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">5.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a string containing only digits, restore it by returning all possible valid IP address combinations.</p>
+                <h2 id="Question">Question</h2><p>Given a string containing only digits, restore it by returning all possible valid IP address combinations.</p>
 <p>For example:<br>Given “25525511135”,</p>
 <p>return [“255.255.11.135”, “255.255.111.35”]. (Order does not matter)</p>
 <a id="more"></a>
-<p>##Solution</p>
-<p>###Use backtracking template</p>
-<p>###validate the numbers.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">restoreIpAddresses</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; result = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        helper(result, <span class="string">""</span>, s, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(List&lt;String&gt; result, String item, String s, <span class="keyword">int</span> pos, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (count == <span class="number">4</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pos == s.length()) &#123;</span><br><span class="line">                result.add(item);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = pos + <span class="number">1</span>; i &lt;= s.length() &amp;&amp; i - pos &lt;= <span class="number">3</span>; i++) &#123; <span class="comment">// </span></span><br><span class="line">            String sub = s.substring(pos, i);</span><br><span class="line">            <span class="keyword">if</span> (!isValidNum(sub)) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            String str = item;</span><br><span class="line">            <span class="keyword">if</span> (!item.isEmpty()) &#123;</span><br><span class="line">                str += <span class="string">"."</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            str += sub;</span><br><span class="line">            helper(result, str, s, i, count + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isValidNum</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (str.length() &gt; <span class="number">1</span> &amp;&amp; str.charAt(<span class="number">0</span>) == <span class="string">'0'</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> num = Integer.parseInt(str);</span><br><span class="line">        <span class="keyword">if</span> (num &lt; <span class="number">0</span> || <span class="number">255</span> &lt; num) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><h2 id="#Use_backtracking_template">#Use backtracking template</h2><h2 id="#validate_the_numbers-">#validate the numbers.</h2><h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">restoreIpAddresses</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; result = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        helper(result, <span class="string">""</span>, s, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(List&lt;String&gt; result, String item, String s, <span class="keyword">int</span> pos, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (count == <span class="number">4</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pos == s.length()) &#123;</span><br><span class="line">                result.add(item);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = pos + <span class="number">1</span>; i &lt;= s.length() &amp;&amp; i - pos &lt;= <span class="number">3</span>; i++) &#123; <span class="comment">// </span></span><br><span class="line">            String sub = s.substring(pos, i);</span><br><span class="line">            <span class="keyword">if</span> (!isValidNum(sub)) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            String str = item;</span><br><span class="line">            <span class="keyword">if</span> (!item.isEmpty()) &#123;</span><br><span class="line">                str += <span class="string">"."</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            str += sub;</span><br><span class="line">            helper(result, str, s, i, count + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isValidNum</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (str.length() &gt; <span class="number">1</span> &amp;&amp; str.charAt(<span class="number">0</span>) == <span class="string">'0'</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> num = Integer.parseInt(str);</span><br><span class="line">        <span class="keyword">if</span> (num &lt; <span class="number">0</span> || <span class="number">255</span> &lt; num) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -181,7 +178,7 @@ return [“255.255.11.135”, “255.255.111.35”]. (Orde">
               <a href="/2015/03/21/Restore-IP-Addresses/" class="article-date">
   <time datetime="2015-03-22T06:03:02.000Z" itemprop="datePublished">2015-03-21</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/03/21/Restore-IP-Addresses/" data-id="cihljxz7c006ct0yufldsq3mz" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/03/21/Restore-IP-Addresses/" data-id="cihloqmj6006c2xyuhmhlxcfk" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Backtracking/">Backtracking</a></li></ul>
@@ -291,13 +288,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

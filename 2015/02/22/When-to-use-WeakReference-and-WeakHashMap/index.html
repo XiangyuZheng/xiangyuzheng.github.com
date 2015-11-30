@@ -8,21 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
     <meta name="description" content="In Java, garbage collection is good to us, but sometimes the system still has memory leak if we are not careful.
-##When things go wrong even with GC
-GC can collect your objects when your objects are n">
+When things go wrong even with GCGC can collect your objects when your objects are no l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="When to use WeakReference and WeakHashMap">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/02/22/When-to-use-WeakReference-and-WeakHashMap/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
 <meta property="og:description" content="In Java, garbage collection is good to us, but sometimes the system still has memory leak if we are not careful.
-##When things go wrong even with GC
-GC can collect your objects when your objects are n">
-<meta property="og:updated_time" content="2015-04-05T20:28:08.000Z">
+When things go wrong even with GCGC can collect your objects when your objects are no l">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="When to use WeakReference and WeakHashMap">
 <meta name="twitter:description" content="In Java, garbage collection is good to us, but sometimes the system still has memory leak if we are not careful.
-##When things go wrong even with GC
-GC can collect your objects when your objects are n">
+When things go wrong even with GCGC can collect your objects when your objects are no l">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -56,7 +53,7 @@ GC can collect your objects when your objects are n">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -64,7 +61,7 @@ GC can collect your objects when your objects are n">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -72,7 +69,7 @@ GC can collect your objects when your objects are n">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -80,7 +77,7 @@ GC can collect your objects when your objects are n">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -163,20 +160,18 @@ GC can collect your objects when your objects are n">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#When_things_go_wrong_even_with_GC"><span class="toc-number">1.</span> <span class="toc-text">When things go wrong even with GC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use_WeakReference_to_solve_the_problem-"><span class="toc-number">2.</span> <span class="toc-text">Use WeakReference to solve the problem.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#When_to_use_WeakHashMap"><span class="toc-number">3.</span> <span class="toc-text">When to use WeakHashMap</span></a></li></ol>
               </div>
               
                 <p>In Java, garbage collection is good to us, but sometimes the system still has memory leak if we are not careful.</p>
-<p>##When things go wrong even with GC</p>
-<p>GC can collect your objects when your objects are no longer reachable in a chain of strong references. However, if your objects are referred by some long-live objects, they will never be collected.</p>
+<h2 id="When_things_go_wrong_even_with_GC">When things go wrong even with GC</h2><p>GC can collect your objects when your objects are no longer reachable in a chain of strong references. However, if your objects are referred by some long-live objects, they will never be collected.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">	</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Object o = <span class="keyword">new</span> Object();</span><br><span class="line">    map.put(<span class="string">"key"</span>, o);</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>In the above code, map is static and it has a reference to Object o, so Object o will not be collected even after the program exits because Object o is referred by the long-live map.</p>
-<p>##Use WeakReference to solve the problem.</p>
-<p>You can read <a href="https://weblogs.java.net/blog/2006/05/04/understanding-weak-references" target="_blank" rel="external">this blog</a> to gain some understanding of strong and wead reference. Using WeakReference, we can let our objects be collected when they are no longer needed.</p>
+<h2 id="Use_WeakReference_to_solve_the_problem-">Use WeakReference to solve the problem.</h2><p>You can read <a href="https://weblogs.java.net/blog/2006/05/04/understanding-weak-references" target="_blank" rel="external">this blog</a> to gain some understanding of strong and wead reference. Using WeakReference, we can let our objects be collected when they are no longer needed.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, WeakReference&lt;Object&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;String, WeakReference&lt;Object&gt;&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Object o = <span class="keyword">new</span> Object();</span><br><span class="line">    WeakReference&lt;Object&gt; weakO = <span class="keyword">new</span>	WeakReference&lt;Object&gt;(o);</span><br><span class="line">    map.put(<span class="string">"key"</span>, weakO);</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>By using WeakReference with HashMap, we prevent from memory leak. You may have a question now, can we use WeakHashMap class in  this example as well? The answer is <strong>no</strong>.</p>
-<p>##When to use WeakHashMap<br>The functions of WeakHashMap are similar to those of HashMap as they all provider put() and get(). However, the usage of WeakHashMap is defferent. That is because WeakHashMap has <strong>weak references to keys</strong> but <strong>strong references to values</strong>. If the key of a entry is collected, then the value of it will also be collected.</p>
+<h2 id="When_to_use_WeakHashMap">When to use WeakHashMap</h2><p>The functions of WeakHashMap are similar to those of HashMap as they all provider put() and get(). However, the usage of WeakHashMap is defferent. That is because WeakHashMap has <strong>weak references to keys</strong> but <strong>strong references to values</strong>. If the key of a entry is collected, then the value of it will also be collected.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> WeakHashMap&lt;Image, Long&gt; weakMap = <span class="keyword">new</span> WeakHashMap&lt;Image, Long&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Image image = <span class="keyword">new</span> Image(<span class="string">"/image/sample.jpg"</span>);</span><br><span class="line">    Long timeInMillis = System.currentTimeMillis();</span><br><span class="line">    weakMap.put(image, timeInMillis);</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>In this example, we want to record some metadata of images. Usually, we can extend the Image class and add metadata in the subclass, but sometimes the class is a final class which can’t be extended. In this situation, we can use WeakHashMap to store the metadata so that the images can be collected by GC when we don’t need them.</p>
 
@@ -186,7 +181,7 @@ GC can collect your objects when your objects are n">
               <a href="/2015/02/22/When-to-use-WeakReference-and-WeakHashMap/" class="article-date">
   <time datetime="2015-02-22T21:29:33.000Z" itemprop="datePublished">2015-02-22</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/02/22/When-to-use-WeakReference-and-WeakHashMap/" data-id="cihljxz37000yt0yu4uldz2nt" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/02/22/When-to-use-WeakReference-and-WeakHashMap/" data-id="cihloqmfi000y2xyu6puchfwo" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Garbage-collection/">Garbage collection</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -296,13 +291,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

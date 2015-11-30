@@ -7,37 +7,37 @@
     <title>[Leetcode] Flatten Binary Tree to Linked List | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a binary tree, flatten it to a linked list in-place.
+    <meta name="description" content="QuestionGiven a binary tree, flatten it to a linked list in-place.
 For example,Given
     1
    / \
   2   5
  / \   \
 3   4   6
-The flattened tree should look like:   1    \     2      \       3">
+The flattened tree should look like:   1    \     2      \       3        \">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Flatten Binary Tree to Linked List">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/06/01/Flatten-Binary-Tree-to-Linked-List/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a binary tree, flatten it to a linked list in-place.
+<meta property="og:description" content="QuestionGiven a binary tree, flatten it to a linked list in-place.
 For example,Given
     1
    / \
   2   5
  / \   \
 3   4   6
-The flattened tree should look like:   1    \     2      \       3">
-<meta property="og:updated_time" content="2015-06-02T06:19:01.000Z">
+The flattened tree should look like:   1    \     2      \       3        \">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Flatten Binary Tree to Linked List">
-<meta name="twitter:description" content="##QuestionGiven a binary tree, flatten it to a linked list in-place.
+<meta name="twitter:description" content="QuestionGiven a binary tree, flatten it to a linked list in-place.
 For example,Given
     1
    / \
   2   5
  / \   \
 3   4   6
-The flattened tree should look like:   1    \     2      \       3">
+The flattened tree should look like:   1    \     2      \       3        \">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -71,7 +71,7 @@ The flattened tree should look like:   1    \     2      \       3">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -79,7 +79,7 @@ The flattened tree should look like:   1    \     2      \       3">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -87,7 +87,7 @@ The flattened tree should look like:   1    \     2      \       3">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -95,7 +95,7 @@ The flattened tree should look like:   1    \     2      \       3">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -178,10 +178,10 @@ The flattened tree should look like:   1    \     2      \       3">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##Recursive"><span class="toc-number">4.</span> <span class="toc-text">#Recursive</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="##Non-recursive"><span class="toc-number">5.</span> <span class="toc-text">#Non-recursive</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a binary tree, flatten it to a linked list in-place.</p>
+                <h2 id="Question">Question</h2><p>Given a binary tree, flatten it to a linked list in-place.</p>
 <p>For example,<br>Given</p>
 <pre><code>    <span class="number">1</span>
    / \
@@ -190,10 +190,9 @@ The flattened tree should look like:   1    \     2      \       3">
 <span class="number">3</span>   <span class="number">4</span>   <span class="number">6</span>
 </code></pre><p>The flattened tree should look like:<br>   1<br>    \<br>     2<br>      \<br>       3<br>        \<br>         4<br>          \<br>           5<br>            \<br>             6<br>click to show hints.</p>
 <p>Hints:<br>If you notice carefully in the flattened tree, each node’s right child points to the next node of a pre-order traversal.<br><a id="more"></a></p>
-<p>##Solution<br>We can do it via recursive and non-recursive method (kind of like Morris traversal). <a href="http://www.shuatiblog.com/blog/2014/05/28/Flatten-Binary-Tree-to-Linked-List/" target="_blank" rel="external">link</a></p>
-<p>##Java code</p>
-<p>###Recursive<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">flatten</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        helper(root);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">helper</span><span class="params">(TreeNode cur)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (cur == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode oldRight = cur.right;</span><br><span class="line">        <span class="keyword">if</span> (cur.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            cur.right = cur.left;</span><br><span class="line">            cur.left = <span class="keyword">null</span>;</span><br><span class="line">            cur = helper(cur.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (oldRight != <span class="keyword">null</span>) &#123;</span><br><span class="line">            cur.right = oldRight;</span><br><span class="line">            cur = helper(cur.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cur;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>###Non-recursive<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">flatten</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (root.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (root.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    TreeNode pre = root.left;</span><br><span class="line">                    <span class="keyword">while</span> (pre.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        pre = pre.right;</span><br><span class="line">                    &#125;</span><br><span class="line">                    pre.right = root.right;</span><br><span class="line">                &#125;</span><br><span class="line">                root.right = root.left;</span><br><span class="line">                root.left = <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            root = root.right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><p>We can do it via recursive and non-recursive method (kind of like Morris traversal). <a href="http://www.shuatiblog.com/blog/2014/05/28/Flatten-Binary-Tree-to-Linked-List/" target="_blank" rel="external">link</a></p>
+<h2 id="Java_code">Java code</h2><h2 id="#Recursive">#Recursive</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">flatten</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        helper(root);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">helper</span><span class="params">(TreeNode cur)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (cur == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode oldRight = cur.right;</span><br><span class="line">        <span class="keyword">if</span> (cur.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            cur.right = cur.left;</span><br><span class="line">            cur.left = <span class="keyword">null</span>;</span><br><span class="line">            cur = helper(cur.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (oldRight != <span class="keyword">null</span>) &#123;</span><br><span class="line">            cur.right = oldRight;</span><br><span class="line">            cur = helper(cur.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cur;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="#Non-recursive">#Non-recursive</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">flatten</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (root.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (root.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    TreeNode pre = root.left;</span><br><span class="line">                    <span class="keyword">while</span> (pre.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        pre = pre.right;</span><br><span class="line">                    &#125;</span><br><span class="line">                    pre.right = root.right;</span><br><span class="line">                &#125;</span><br><span class="line">                root.right = root.left;</span><br><span class="line">                root.left = <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            root = root.right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -201,7 +200,7 @@ The flattened tree should look like:   1    \     2      \       3">
               <a href="/2015/06/01/Flatten-Binary-Tree-to-Linked-List/" class="article-date">
   <time datetime="2015-06-02T06:12:32.000Z" itemprop="datePublished">2015-06-01</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/06/01/Flatten-Binary-Tree-to-Linked-List/" data-id="cihljxze800g9t0yudbc0eq28" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/06/01/Flatten-Binary-Tree-to-Linked-List/" data-id="cihloqmpy00g92xyuo15ft5ar" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFS/">DFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -311,13 +310,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

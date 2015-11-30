@@ -7,22 +7,22 @@
     <title>[Leetcode] Maximal Square | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven a 2D binary matrix filled with 0’s and 1’s, find the largest square containing all 1’s and return its area.
+    <meta name="description" content="QuestionGiven a 2D binary matrix filled with 0’s and 1’s, find the largest square containing all 1’s and return its area.
 For example, given the following matrix:
-1 0 1 0 01 0 1 1 11 1 1 1 11 0 0 1">
+1 0 1 0 01 0 1 1 11 1 1 1 11 0 0 1 0R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Maximal Square">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/06/15/Maximal-Square/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven a 2D binary matrix filled with 0’s and 1’s, find the largest square containing all 1’s and return its area.
+<meta property="og:description" content="QuestionGiven a 2D binary matrix filled with 0’s and 1’s, find the largest square containing all 1’s and return its area.
 For example, given the following matrix:
-1 0 1 0 01 0 1 1 11 1 1 1 11 0 0 1">
-<meta property="og:updated_time" content="2015-06-15T08:27:52.000Z">
+1 0 1 0 01 0 1 1 11 1 1 1 11 0 0 1 0R">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Maximal Square">
-<meta name="twitter:description" content="##QuestionGiven a 2D binary matrix filled with 0’s and 1’s, find the largest square containing all 1’s and return its area.
+<meta name="twitter:description" content="QuestionGiven a 2D binary matrix filled with 0’s and 1’s, find the largest square containing all 1’s and return its area.
 For example, given the following matrix:
-1 0 1 0 01 0 1 1 11 1 1 1 11 0 0 1">
+1 0 1 0 01 0 1 1 11 1 1 1 11 0 0 1 0R">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -56,7 +56,7 @@ For example, given the following matrix:
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -64,7 +64,7 @@ For example, given the following matrix:
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -72,7 +72,7 @@ For example, given the following matrix:
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -80,7 +80,7 @@ For example, given the following matrix:
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -163,15 +163,15 @@ For example, given the following matrix:
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given a 2D binary matrix filled with 0’s and 1’s, find the largest square containing all 1’s and return its area.</p>
+                <h2 id="Question">Question</h2><p>Given a 2D binary matrix filled with 0’s and 1’s, find the largest square containing all 1’s and return its area.</p>
 <p>For example, given the following matrix:</p>
 <p>1 0 1 0 0<br>1 0 1 1 1<br>1 1 1 1 1<br>1 0 0 1 0<br>Return 4.<br><a id="more"></a></p>
-<p>##Solution<br>A DP question.</p>
+<h2 id="Solution">Solution</h2><p>A DP question.</p>
 <p>t[i][j] = min(t[i][j-1], t[i-1][j], t[i-1][j-1]) + 1</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximalSquare</span><span class="params">(<span class="keyword">char</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> height = matrix.length;</span><br><span class="line">        <span class="keyword">if</span> (height == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> width = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">if</span> (width == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; height; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; width; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span>) &#123;</span><br><span class="line">                    max = Math.max(max, matrix[i][j] - <span class="string">'0'</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (matrix[i][j] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                        <span class="keyword">int</span> min = Math.min(matrix[i - <span class="number">1</span>][j], matrix[i - <span class="number">1</span>][j - <span class="number">1</span>]);</span><br><span class="line">        				min = Math.min(min, matrix[i][j - <span class="number">1</span>]);</span><br><span class="line">        				matrix[i][j] = (<span class="keyword">char</span>)(min + <span class="number">1</span>);</span><br><span class="line">                        max = Math.max(max, matrix[i][j] - <span class="string">'0'</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max * max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximalSquare</span><span class="params">(<span class="keyword">char</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> height = matrix.length;</span><br><span class="line">        <span class="keyword">if</span> (height == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> width = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">if</span> (width == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; height; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; width; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span>) &#123;</span><br><span class="line">                    max = Math.max(max, matrix[i][j] - <span class="string">'0'</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (matrix[i][j] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                        <span class="keyword">int</span> min = Math.min(matrix[i - <span class="number">1</span>][j], matrix[i - <span class="number">1</span>][j - <span class="number">1</span>]);</span><br><span class="line">        				min = Math.min(min, matrix[i][j - <span class="number">1</span>]);</span><br><span class="line">        				matrix[i][j] = (<span class="keyword">char</span>)(min + <span class="number">1</span>);</span><br><span class="line">                        max = Math.max(max, matrix[i][j] - <span class="string">'0'</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max * max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -179,7 +179,7 @@ For example, given the following matrix:
               <a href="/2015/06/15/Maximal-Square/" class="article-date">
   <time datetime="2015-06-15T08:26:42.000Z" itemprop="datePublished">2015-06-15</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/06/15/Maximal-Square/" data-id="cihljxzan00bht0yulc34qppa" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/06/15/Maximal-Square/" data-id="cihloqmmg00bh2xyu3hi84bl6" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DP/">DP</a></li></ul>
@@ -289,13 +289,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

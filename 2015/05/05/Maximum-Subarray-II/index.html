@@ -7,25 +7,25 @@
     <title>[Lintcode] Maximum Subarray II | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven an array of integers, find two non-overlapping subarrays which have the largest sum.
+    <meta name="description" content="QuestionGiven an array of integers, find two non-overlapping subarrays which have the largest sum.
 The number in each subarray should be contiguous.
 Return the largest sum.
-ExampleFor given [1, 3, -">
+ExampleFor given [1, 3, -1,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Lintcode] Maximum Subarray II">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/05/05/Maximum-Subarray-II/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven an array of integers, find two non-overlapping subarrays which have the largest sum.
+<meta property="og:description" content="QuestionGiven an array of integers, find two non-overlapping subarrays which have the largest sum.
 The number in each subarray should be contiguous.
 Return the largest sum.
-ExampleFor given [1, 3, -">
-<meta property="og:updated_time" content="2015-05-06T04:56:03.000Z">
+ExampleFor given [1, 3, -1,">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Lintcode] Maximum Subarray II">
-<meta name="twitter:description" content="##QuestionGiven an array of integers, find two non-overlapping subarrays which have the largest sum.
+<meta name="twitter:description" content="QuestionGiven an array of integers, find two non-overlapping subarrays which have the largest sum.
 The number in each subarray should be contiguous.
 Return the largest sum.
-ExampleFor given [1, 3, -">
+ExampleFor given [1, 3, -1,">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -59,7 +59,7 @@ ExampleFor given [1, 3, -">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -67,7 +67,7 @@ ExampleFor given [1, 3, -">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -75,7 +75,7 @@ ExampleFor given [1, 3, -">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -83,7 +83,7 @@ ExampleFor given [1, 3, -">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -166,17 +166,17 @@ ExampleFor given [1, 3, -">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given an array of integers, find two non-overlapping subarrays which have the largest sum.</p>
+                <h2 id="Question">Question</h2><p>Given an array of integers, find two non-overlapping subarrays which have the largest sum.</p>
 <p>The number in each subarray should be contiguous.</p>
 <p>Return the largest sum.</p>
 <p>Example<br>For given [1, 3, -1, 2, -1, 2], the two subarrays are [1, 3] and [2, -1, 2] or [1, 3, -1, 2] and [2], they both have the largest sum 7.</p>
 <p>Note<br>The subarray should contain at least one number</p>
 <p>Challenge<br>Can you do it in time complexity O(n) ?<br><a id="more"></a></p>
-<p>##Solution<br>This is a DP question. We should do two DP pass, one is for left-most subarray, the other is for right-most subarray.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * <span class="doctag">@param</span> nums: A list of integers</span><br><span class="line">     * <span class="doctag">@return</span>: An integer denotes the sum of max two non-overlapping subarrays</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxTwoSubArrays</span><span class="params">(ArrayList&lt;Integer&gt; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (len == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> Math.max(<span class="number">0</span>, nums.get(<span class="number">0</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] leftMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">int</span>[] rightMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">int</span> maxSoFar = Math.max(<span class="number">0</span>, nums.get(<span class="number">0</span>));</span><br><span class="line">        leftMax[<span class="number">0</span>] = nums.get(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">            maxSoFar += nums.get(i);</span><br><span class="line">            leftMax[i] = Math.max(leftMax[i - <span class="number">1</span>], maxSoFar);</span><br><span class="line">            maxSoFar = Math.max(<span class="number">0</span>, maxSoFar);</span><br><span class="line">        &#125;</span><br><span class="line">        maxSoFar =  Math.max(<span class="number">0</span>, nums.get(len - <span class="number">1</span>));</span><br><span class="line">        rightMax[len - <span class="number">1</span>] = nums.get(len - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            maxSoFar += nums.get(i);</span><br><span class="line">            rightMax[i] = Math.max(rightMax[i + <span class="number">1</span>], maxSoFar);</span><br><span class="line">            maxSoFar = Math.max(<span class="number">0</span>, maxSoFar);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= len - <span class="number">2</span>; i++) &#123;</span><br><span class="line">            max = Math.max(max, leftMax[i] + rightMax[i + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution">Solution</h2><p>This is a DP question. We should do two DP pass, one is for left-most subarray, the other is for right-most subarray.</p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * <span class="doctag">@param</span> nums: A list of integers</span><br><span class="line">     * <span class="doctag">@return</span>: An integer denotes the sum of max two non-overlapping subarrays</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxTwoSubArrays</span><span class="params">(ArrayList&lt;Integer&gt; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (len == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> Math.max(<span class="number">0</span>, nums.get(<span class="number">0</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] leftMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">int</span>[] rightMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">int</span> maxSoFar = Math.max(<span class="number">0</span>, nums.get(<span class="number">0</span>));</span><br><span class="line">        leftMax[<span class="number">0</span>] = nums.get(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">            maxSoFar += nums.get(i);</span><br><span class="line">            leftMax[i] = Math.max(leftMax[i - <span class="number">1</span>], maxSoFar);</span><br><span class="line">            maxSoFar = Math.max(<span class="number">0</span>, maxSoFar);</span><br><span class="line">        &#125;</span><br><span class="line">        maxSoFar =  Math.max(<span class="number">0</span>, nums.get(len - <span class="number">1</span>));</span><br><span class="line">        rightMax[len - <span class="number">1</span>] = nums.get(len - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            maxSoFar += nums.get(i);</span><br><span class="line">            rightMax[i] = Math.max(rightMax[i + <span class="number">1</span>], maxSoFar);</span><br><span class="line">            maxSoFar = Math.max(<span class="number">0</span>, maxSoFar);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= len - <span class="number">2</span>; i++) &#123;</span><br><span class="line">            max = Math.max(max, leftMax[i] + rightMax[i + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -184,7 +184,7 @@ ExampleFor given [1, 3, -">
               <a href="/2015/05/05/Maximum-Subarray-II/" class="article-date">
   <time datetime="2015-05-06T04:51:33.000Z" itemprop="datePublished">2015-05-05</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/05/05/Maximum-Subarray-II/" data-id="cihljxzai00b9t0yuh4imz2a9" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/05/05/Maximum-Subarray-II/" data-id="cihloqmmb00b92xyu565qwf7n" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DP/">DP</a></li></ul>
@@ -294,13 +294,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

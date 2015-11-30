@@ -7,16 +7,16 @@
     <title>Binary Tree and BFS | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionLevel order traversal of a binary tree.">
+    <meta name="description" content="QuestionLevel order traversal of a binary tree.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Binary Tree and BFS">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/04/05/Binary-Tree-BFS/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionLevel order traversal of a binary tree.">
-<meta property="og:updated_time" content="2015-06-22T01:10:34.000Z">
+<meta property="og:description" content="QuestionLevel order traversal of a binary tree.">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Binary Tree and BFS">
-<meta name="twitter:description" content="##QuestionLevel order traversal of a binary tree.">
+<meta name="twitter:description" content="QuestionLevel order traversal of a binary tree.">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -50,7 +50,7 @@
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -58,7 +58,7 @@
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -66,7 +66,7 @@
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -74,7 +74,7 @@
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -157,13 +157,12 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code_and_Template"><span class="toc-number">2.</span> <span class="toc-text">Code and Template</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Related_Questions"><span class="toc-number">3.</span> <span class="toc-text">Related Questions</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Level order traversal of a binary tree.<br><a id="more"></a></p>
-<p>##Code and Template<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt; levelOrder(TreeNode root) &#123;</span><br><span class="line">    ArrayList result = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</span><br><span class="line">    queue.offer(root);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; level = <span class="keyword">new</span> ArrayList&lt;Integer&gt;(); <span class="comment">// important</span></span><br><span class="line">        <span class="keyword">int</span> size = queue.size(); <span class="comment">// use size to track one level</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">            TreeNode head = queue.poll();</span><br><span class="line">            level.add(head.val);</span><br><span class="line">            <span class="keyword">if</span> (head.left != <span class="keyword">null</span>)</span><br><span class="line">                queue.offer(head.left);</span><br><span class="line">            <span class="keyword">if</span> (head.right != <span class="keyword">null</span>)</span><br><span class="line">                queue.offer(head.right);</span><br><span class="line">        &#125;</span><br><span class="line">        result.add(level); <span class="comment">// important</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>##Related Questions</p>
-<ol>
+                <h2 id="Question">Question</h2><p>Level order traversal of a binary tree.<br><a id="more"></a></p>
+<h2 id="Code_and_Template">Code and Template</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt; levelOrder(TreeNode root) &#123;</span><br><span class="line">    ArrayList result = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</span><br><span class="line">    queue.offer(root);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; level = <span class="keyword">new</span> ArrayList&lt;Integer&gt;(); <span class="comment">// important</span></span><br><span class="line">        <span class="keyword">int</span> size = queue.size(); <span class="comment">// use size to track one level</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">            TreeNode head = queue.poll();</span><br><span class="line">            level.add(head.val);</span><br><span class="line">            <span class="keyword">if</span> (head.left != <span class="keyword">null</span>)</span><br><span class="line">                queue.offer(head.left);</span><br><span class="line">            <span class="keyword">if</span> (head.right != <span class="keyword">null</span>)</span><br><span class="line">                queue.offer(head.right);</span><br><span class="line">        &#125;</span><br><span class="line">        result.add(level); <span class="comment">// important</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Related_Questions">Related Questions</h2><ol>
 <li><a href="http://xiangyuzheng.github.io/2015/04/05/Binary-Tree-Level-Order-Traversal/">Binary Tree Level Order Traversal</a></li>
 <li><a href="http://xiangyuzheng.github.io/2015/04/05/Binary-Tree-Level-Order-Traversal-II/">Binary Tree Level Order Traversal II</a></li>
 <li><a href="http://xiangyuzheng.github.io/2015/04/05/Binary-Tree-Zigzag-Level-Order-Traversal/">Binary Tree Zigzag Level Order Traversal</a></li>
@@ -178,7 +177,7 @@
               <a href="/2015/04/05/Binary-Tree-BFS/" class="article-date">
   <time datetime="2015-04-06T02:50:17.000Z" itemprop="datePublished">2015-04-05</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/04/05/Binary-Tree-BFS/" data-id="cihljxzgp00klt0yu5eo4c3s1" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/04/05/Binary-Tree-BFS/" data-id="cihloqmsd00kl2xyuj12lqwyd" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BFS/">BFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-template/">Coding template</a></li></ul>
@@ -288,13 +287,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   

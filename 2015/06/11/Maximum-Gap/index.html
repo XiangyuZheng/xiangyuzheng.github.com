@@ -7,22 +7,22 @@
     <title>[Leetcode] Maximum Gap | Happy Birthday to Dolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="##QuestionGiven an unsorted array, find the maximum difference between the successive elements in its sorted form.
+    <meta name="description" content="QuestionGiven an unsorted array, find the maximum difference between the successive elements in its sorted form.
 Try to solve it in linear time/space.
-Return 0 if the array contains less than 2 elem">
+Return 0 if the array contains less than 2 elemen">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Leetcode] Maximum Gap">
 <meta property="og:url" content="http://xiangyuzheng.github.io/2015/06/11/Maximum-Gap/index.html">
 <meta property="og:site_name" content="Happy Birthday to Dolly">
-<meta property="og:description" content="##QuestionGiven an unsorted array, find the maximum difference between the successive elements in its sorted form.
+<meta property="og:description" content="QuestionGiven an unsorted array, find the maximum difference between the successive elements in its sorted form.
 Try to solve it in linear time/space.
-Return 0 if the array contains less than 2 elem">
-<meta property="og:updated_time" content="2015-06-12T06:11:43.000Z">
+Return 0 if the array contains less than 2 elemen">
+<meta property="og:updated_time" content="2015-11-30T08:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] Maximum Gap">
-<meta name="twitter:description" content="##QuestionGiven an unsorted array, find the maximum difference between the successive elements in its sorted form.
+<meta name="twitter:description" content="QuestionGiven an unsorted array, find the maximum difference between the successive elements in its sorted form.
 Try to solve it in linear time/space.
-Return 0 if the array contains less than 2 elem">
+Return 0 if the array contains less than 2 elemen">
     
     
       <link rel="icon" href="/css/favicon.ico">
@@ -56,7 +56,7 @@ Return 0 if the array contains less than 2 elem">
                   Home
                 </a>
             
-              <a class="main-nav-link" href="/category#Java">
+              <a class="main-nav-link" href="/categories/Java">
                   
                   
 
@@ -64,7 +64,7 @@ Return 0 if the array contains less than 2 elem">
                   Java
                 </a>
             
-              <a class="main-nav-link" href="/category#Android">
+              <a class="main-nav-link" href="/categories/Android">
                   
                   
 
@@ -72,7 +72,7 @@ Return 0 if the array contains less than 2 elem">
                   Android
                 </a>
             
-              <a class="main-nav-link" href="/category#Algorithm">
+              <a class="main-nav-link" href="/categories/Algorithm">
                   
                   
 
@@ -80,7 +80,7 @@ Return 0 if the array contains less than 2 elem">
                   Algorithm
                 </a>
             
-              <a class="main-nav-link" href="/category#Leetcode">
+              <a class="main-nav-link" href="/categories/Leetcode">
                   
                   
 
@@ -163,17 +163,17 @@ Return 0 if the array contains less than 2 elem">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">1.</span> <span class="toc-text">Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java_code"><span class="toc-number">3.</span> <span class="toc-text">Java code</span></a></li></ol>
               </div>
               
-                <p>##Question<br>Given an unsorted array, find the maximum difference between the successive elements in its sorted form.</p>
+                <h2 id="Question">Question</h2><p>Given an unsorted array, find the maximum difference between the successive elements in its sorted form.</p>
 <p>Try to solve it in linear time/space.</p>
 <p>Return 0 if the array contains less than 2 elements.</p>
 <p>You may assume all elements in the array are non-negative integers and fit in the 32-bit signed integer range.<br><a id="more"></a></p>
-<p>##Solution<br>It’s difficult to sort this by O(n), but we can do bucket sort to partly sort the array.</p>
+<h2 id="Solution">Solution</h2><p>It’s difficult to sort this by O(n), but we can do bucket sort to partly sort the array.</p>
 <p>The most ideal gap is max - min. so if there is N elements, there will be N - 1 gaps, the maximum gap must be greater than (max - min) / (N - 1). Therefore, we don’t have to care about the gaps inside buckets.</p>
 <p>Details refer to <a href="http://leetcode.tgic.me/maximum-gap/index.html" target="_blank" rel="external">this blog</a>.</p>
-<p>##Java code<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximumGap</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (len &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> max = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> min = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            max = Math.max(max, num);</span><br><span class="line">            min = Math.min(min, num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">double</span> interval = (<span class="keyword">double</span>)(max - min) / (len - <span class="number">1</span>);</span><br><span class="line">        Bucket[] buckets = <span class="keyword">new</span> Bucket[len];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            buckets[i] = <span class="keyword">new</span> Bucket();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            <span class="keyword">int</span> bucketIndex = (<span class="keyword">int</span>)((num - min) / interval);</span><br><span class="line">            <span class="keyword">if</span> (buckets[bucketIndex].low == -<span class="number">1</span>) &#123;</span><br><span class="line">                buckets[bucketIndex].low = num;</span><br><span class="line">                buckets[bucketIndex].high = num;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                buckets[bucketIndex].low = Math.min(num, buckets[bucketIndex].low);</span><br><span class="line">                buckets[bucketIndex].high = Math.max(num, buckets[bucketIndex].high);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> pre = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> maxGap = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (Bucket b : buckets) &#123;</span><br><span class="line">            <span class="keyword">if</span> (b.low == -<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (pre &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                    maxGap = Math.max(maxGap, b.low - pre);</span><br><span class="line">                &#125;</span><br><span class="line">                pre = b.high;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxGap;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Bucket</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> low;</span><br><span class="line">        <span class="keyword">int</span> high;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Bucket</span><span class="params">()</span></span>&#123;</span><br><span class="line">            low = -<span class="number">1</span>;</span><br><span class="line">            high = -<span class="number">1</span>; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java_code">Java code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximumGap</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (len &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> max = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> min = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            max = Math.max(max, num);</span><br><span class="line">            min = Math.min(min, num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">double</span> interval = (<span class="keyword">double</span>)(max - min) / (len - <span class="number">1</span>);</span><br><span class="line">        Bucket[] buckets = <span class="keyword">new</span> Bucket[len];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            buckets[i] = <span class="keyword">new</span> Bucket();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            <span class="keyword">int</span> bucketIndex = (<span class="keyword">int</span>)((num - min) / interval);</span><br><span class="line">            <span class="keyword">if</span> (buckets[bucketIndex].low == -<span class="number">1</span>) &#123;</span><br><span class="line">                buckets[bucketIndex].low = num;</span><br><span class="line">                buckets[bucketIndex].high = num;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                buckets[bucketIndex].low = Math.min(num, buckets[bucketIndex].low);</span><br><span class="line">                buckets[bucketIndex].high = Math.max(num, buckets[bucketIndex].high);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> pre = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> maxGap = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (Bucket b : buckets) &#123;</span><br><span class="line">            <span class="keyword">if</span> (b.low == -<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (pre &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                    maxGap = Math.max(maxGap, b.low - pre);</span><br><span class="line">                &#125;</span><br><span class="line">                pre = b.high;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxGap;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Bucket</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> low;</span><br><span class="line">        <span class="keyword">int</span> high;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Bucket</span><span class="params">()</span></span>&#123;</span><br><span class="line">            low = -<span class="number">1</span>;</span><br><span class="line">            high = -<span class="number">1</span>; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
@@ -181,7 +181,7 @@ Return 0 if the array contains less than 2 elem">
               <a href="/2015/06/11/Maximum-Gap/" class="article-date">
   <time datetime="2015-06-12T06:08:08.000Z" itemprop="datePublished">2015-06-11</time>
 </a>
-              <a data-url="http://xiangyuzheng.github.io/2015/06/11/Maximum-Gap/" data-id="cihljxzal00bdt0yutt4i9rn6" class="article-share-link">Share</a>
+              <a data-url="http://xiangyuzheng.github.io/2015/06/11/Maximum-Gap/" data-id="cihloqmme00bd2xyu5nzi1g7c" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -291,13 +291,13 @@ $(function(){
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/category#Java" class="mobile-nav-link">Java</a>
+    <a href="/categories/Java" class="mobile-nav-link">Java</a>
   
-    <a href="/category#Android" class="mobile-nav-link">Android</a>
+    <a href="/categories/Android" class="mobile-nav-link">Android</a>
   
-    <a href="/category#Algorithm" class="mobile-nav-link">Algorithm</a>
+    <a href="/categories/Algorithm" class="mobile-nav-link">Algorithm</a>
   
-    <a href="/category#Leetcode" class="mobile-nav-link">LeetCode</a>
+    <a href="/categories/Leetcode" class="mobile-nav-link">LeetCode</a>
   
     <a href="/category" class="mobile-nav-link">Category</a>
   
